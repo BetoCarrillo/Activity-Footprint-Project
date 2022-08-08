@@ -1,6 +1,6 @@
 
 #heading {text-align: center; 
-    font-size: 60px;
+    font-size: 80px;
     padding-top: 1em;
     color:
     
@@ -11,5 +11,7 @@ h2{color:
     
 rgb(0, 0, 190);}
 
+#noMargin {margin: 0%;}
 
+#noPad {padding: 0%;}
 

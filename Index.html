@@ -13,30 +13,112 @@
 </head>
 
 <body>
+
+
+
     <div>
+        <!--   Heading  -->
         <h1 id="heading">Activity Footprint</h1>
-    </div> <br> <br>
+    </div> <br>
     <div>
-        <!--   <div class="container text-start">
-            <div class="row">
-                <strong class="col-sm-3">NAME
-                </strong>
-                <strong class="col-sm-3">CATEGORY
-                </strong>
-                <strong class="col-sm-3">REGION
-                </strong>
-                <strong class="col-sm-3">SOURCE
-                </strong>
-            </div> -->
+        <!--   Know More   -->
+        <div class="text-center">
+            <button target="blank" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                style="width: 20rem; height: 4rem; font-size: 30px; background-color:   rgb(0, 0, 190);">
+                Know more
+            </button>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">More Info</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body container text-start">
+                        <p>Use this webpage to search global emission factors available through the <a
+                                href="https://www.climatiq.io/docs" target="_blank" data-bs-toggle="tooltip"
+                                title="Tooltip">Climatiq
+                                API</a></p>
+                        <p>Climatiq API converts operational activity data into CO2e (carbon
+                            dioxide equivalent) estimates, allowing us to understand each activity's impact on the
+                            environment and identify actions to manage and reduce it.
+                        </p>
+                        <p> <strong> What is an Emission Factor?</strong>
+                            An emission factor is a value that estimates the quantity of a gas with a global warming
+                            potential (GWP) released into the atmosphere, per some unit related to a particular
+                            activity.</p>
+                        <p> Make use of the filters and search bars to toggle around the different activities and get to
+                            know each emission factor. You can find and group the variety of activities using parameters
+                            such as: <br> <br>
+                        </p>
+
+                        <div class="row justify-content-md-center">
+                            <a href="#" role="button" class="btn btn-secondary col-md-10" data-bs-toggle="popover"
+                                title="Emission Factor"
+                                data-bs-content="Value that estimates the quantity of C02 emissions.">Emission
+                                Factor</a>
+                        </div>
+                        <div class="row justify-content-md-center" style="column-gap: 2rem;">
+
+                            <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2 " data-bs-toggle="popover"
+                                title="Activity" data-bs-content="Activity's name">Activity</a>
+                            <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2" data-bs-toggle="popover"
+                                title="Category" data-bs-content="Emission factor category.">Category</a><a href="#"
+                                role="button" class="btn btn-secondary col-md-3 gy-2" data-bs-toggle="popover"
+                                title="Region"
+                                data-bs-content="Geographic region to which the emission factor applies.">
+                                Region</a>
+                        </div>
+                        <div class="row justify-content-md-center" style="column-gap: 2rem;">
+                            <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2" data-bs-toggle="popover"
+                                title="Source" data-bs-content="Emission factor publisher.">Source</a>
+                            <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2" data-bs-toggle="popover"
+                                title="Origin"
+                                data-bs-content="Indicates whether the CO2e emission factor provided in the response was provided by the mentioned source or calculated by Climatiq.">Origin</a>
+                            <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2" data-bs-toggle="popover"
+                                title="Year" data-bs-content="Year for which the emission factor applies.">Year</a>
+                        </div>
+
+                        <div class="row justify-content-md-center" style="column-gap: 2rem;">
+
+
+                            <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2" data-bs-toggle="popover"
+                                title="Calculation Method"
+                                data-bs-content="Indicates which conversion values were used (IPCC 4th or 5th Assessment Report) to generate the returned CO2e emission factor.">Calculation
+                                Method</a>
+                            <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2" data-bs-toggle="popover"
+                                title="Unit type"
+                                data-bs-content="The unit in which the factor field is expressed.">Unit
+                                type</a>
+                            <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2" data-bs-toggle="popover"
+                                title="Search Bar"
+                                data-bs-content="You can search for the activities with free-text search bar.">Search
+                                Bar</a>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div> <br> <br>
+    </div>
+
+    <div>
+        <!--   Table  -->
         <div class="accordion container text-start">
             <div class="row accordion-item">
-                <h2 class="col-sm-3">NAME
+                <h2 class="col-md-3">ACTIVITY
                 </h2>
-                <h2 class="col-sm-3">CATEGORY
+                <h2 class="col-md-3">CATEGORY
                 </h2>
-                <h2 class="col-sm-3">REGION
+                <h2 class="col-md-3">REGION
                 </h2>
-                <h2 class="col-sm-3">SOURCE
+                <h2 class="col-md-3">SOURCE
                 </h2>
             </div>
         </div>
