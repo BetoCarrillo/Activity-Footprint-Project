@@ -2,18 +2,26 @@
 #heading {text-align: center; 
     font-size: 80px;
     padding-top: 1em;
+    
     color:
     
     rgb(0, 0, 190)
 }
 
-h2{color: 
+h2{
+    background-color: #e7f1ff;
+    color: 
     
 rgb(0, 0, 190);}
 
 #noMargin {margin: 0%;}
 
 #noPad {padding: 0%;}
+
+/* #sidebar {position: fixed;
+    display: block;
+}
+ */
 
 
 
