@@ -13,15 +13,20 @@
 </head>
 
 <body>
-
     <div>
-        <!--   Heading  -->
+        <!--   HEADING  -->
         <h1 id="heading">Activity Footprint</h1>
     </div> <br>
+    <!-- MAIN -->
+
+
     <div>
         <!--   Know More   -->
         <div class="text-center">
-
+            <button target="blank" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                data-bs-target="#exampleModal" id="buttonLearn">
+                Learn more
+            </button>
         </div>
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
@@ -36,15 +41,20 @@
                                 title="Tooltip">Climatiq
                                 API</a></p>
                         <p>Climatiq API converts operational activity data into CO2e (carbon
-                            dioxide equivalent) estimates, allowing us to understand each activity's impact on the
+                            dioxide equivalent) estimates, allowing us to understand each activity's impact on
+                            the
                             environment and identify actions to manage and reduce it.
                         </p>
                         <p> <strong> What is an Emission Factor?</strong>
-                            An emission factor is a value that estimates the quantity of a gas with a global warming
+                            An emission factor is a value that estimates the quantity of a gas with a global
+                            warming
                             potential (GWP) released into the atmosphere, per some unit related to a particular
                             activity.</p>
-                        <p> Make use of the filters and search bars to toggle around the different activities and get to
-                            know each emission factor. You can find and group the variety of activities using parameters
+                        <p> Make use of the filters and search bars to toggle around the different activities
+                            and
+                            get to
+                            know each emission factor. You can find and group the variety of activities using
+                            parameters
                             such as: <br> <br>
                         </p>
 
@@ -101,59 +111,193 @@
         </div> <br>
     </div>
 
-    <div>
-        <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive">Toggle offcanvas</button>
+    <div class="text-center container">
+        <!-- ///// sidebar  -->
+        <div class="row">
+            <div class="col-lg-2" id="sideBarPad">
+                <div class="container">
 
-        <div class="alert alert-info d-none d-lg-block">Filter
-        </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive"
+                            id="buttonFilter">Filters</button>
+                    </div>
+                    <div class="offcanvas-lg offcanvas-end " tabindex="-1" id="offcanvasResponsive"
+                        aria-labelledby="offcanvasResponsiveLabel">
+                        <div class="offcanvas-header ">
+                            <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Filter emissions</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body container text-start">
+                            <div>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">ACTIVITY</strong>
+                                    </div>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="Activity select" id="nameIn" style="width:10rem;">
+                                                <option selected disabled hidden>Select..</option>
+                                                <option value="all">All Activities</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">CATEGORY</strong>
+                                    </div>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="category" id="catIn" style="width:10rem;">
+                                                <option selected disabled hidden>Select..</option>
+                                                <option value="all">All Categories</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">REGION</strong>
+                                    </div>
 
-        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="offcanvasResponsive"
-            aria-labelledby="offcanvasResponsiveLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Filter</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                    data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <p class="mb-0">Activity</p>
-                <div>
-                    <select name="Activity" id="nameIn">
-                        <option value="all">All activities</option>
-                    </select>
-                </div>
-            </div>
-        </div>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="region" id="regIn" style="width:10rem;">
+                                                <option selected disabled hidden>Select..</option>
+                                                <option value="all">All Regions</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">SOURCE</strong>
+                                    </div>
 
-        <div>
-            <div>
-                <!--   Table  -->
-                <div class="accordion container text-start">
-                    <div class="row accordion-item">
-                        <h2 id="noMargin" class="col">ACTIVITY
-                        </h2>
-                        <h2 id="noMargin" class="col">CATEGORY
-                        </h2>
-                        <h2 id="noMargin" class="col">REGION
-                        </h2>
-                        <h2 id="noMargin" class="col">SOURCE
-                        </h2>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="source" id="soIn" style="width:10rem;">
+                                                <option selected disabled hidden>Select..</option>
+                                                <option value="all">All Sources</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">ORIGIN</strong>
+                                    </div>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="origin" id="orIn" style="width:10rem;">
+                                                <option selected disabled hidden>Select..</option>
+                                                <option value="all">All Origins</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">YEAR</strong>
+                                    </div>
+
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="year" id="yeIn" style="width:10rem;">
+                                                <option selected disabled hidden>Select..</option>
+                                                <option value="all">All Years</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">CALCULATION METHOD</strong>
+                                    </div>
+
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="method" id="metIn" style="width:10rem;">
+                                                <option selected disabled hidden>Select..</option>
+                                                <option value="all">All Methods</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">UNIT TYPE</strong>
+                                    </div>
+
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="unit" id="unIn" style="width:10rem;">
+                                                <option selected disabled hidden>
+                                                    Select..
+                                                </option>
+                                                <option value="all">All Units</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="accordion accordion-flush" id="accordionFlushExample">
+                <br>
+            </div>
+
+
+
+            <div class="col-lg-10" id="sideBarAcc">
+                <div>
+                    <div>
+                        <!--   Accordion  -->
+                        <div class="container text-start">
+                            <div class="row accordion-item">
+                                <h2 id="noMargin" class="col">ACTIVITY
+                                </h2>
+                                <h2 id="noMargin" class="col">CATEGORY
+                                </h2>
+                                <h2 id="noMargin" class="col">REGION
+                                </h2>
+                                <h2 id="noMargin" class="col">SOURCE
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-        crossorigin="anonymous"></script>
-    <!-- <script src="/allresponse.js"></script> -->
-    <!-- <script src="/response2.js"></script> -->
-    <script src="/response.js"></script>
-    <!-- <script src="/main.js"></script> -->
-    <script src="/main2.js"></script>
+    <div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+        <!-- <script src="/allresponse.js"></script> -->
+        <!-- <script src="/response2.js"></script> -->
+        <script src="/response.js"></script>
+        <!-- <script src="/main.js"></script> -->
+        <script src="/main2.js"></script>
+    </div>
+
+
+
+
+
 </body>
 
 </html>

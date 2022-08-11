@@ -1,11 +1,16 @@
 
 #heading {text-align: center; 
     font-size: 80px;
-    padding-top: 1em;
-    
+    padding-top: 1em;    
     color:
-    
     rgb(0, 0, 190)
+}
+
+
+
+#align {
+    text-align: center;
+    align-items: right;
 }
 
 h2{
@@ -23,5 +28,38 @@ rgb(0, 0, 190);}
 }
  */
 
+ #buttonLearn {
+width: 13rem;
+    height: 5rem;
+    font-size: 30px;
+    background-color: rgb(0, 0, 190);
+ }
 
+
+ #buttonFilter{
+    width: 8rem;
+        height: 3rem;
+        font-size: 20px;
+        background-color: rgb(0, 0, 190);
+       
+    
+ }
+
+ #filterEmissions{
+    padding: 1%;
+    margin: 0%;
+    background:none;
+    border: none;
+    font-weight: bold;
+    color: black;
+ }
+
+ #widths{
+    width: 100rem !important;
+ }
+
+ #filterInitial {
+    color: green;
+    background-color: green;
+ }
 
