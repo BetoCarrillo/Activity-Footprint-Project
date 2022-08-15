@@ -1,11 +1,15 @@
-
+.positioning {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
 #heading {text-align: center; 
-    font-size: 80px;
-    padding-top: 1em;    
+    font-size: 90px;
+    padding-top: 0.3em;    
     color:
     rgb(0, 0, 190)
 }
-
 
 
 #align {
@@ -19,7 +23,9 @@ h2{
     
 rgb(0, 0, 190);}
 
-#noMargin {margin: 0%;}
+#noMargin {margin: 0%;
+   
+}
 
 #noPad {padding: 0%;}
 
@@ -28,38 +34,81 @@ rgb(0, 0, 190);}
 }
  */
 
+ #spinner{
+    font-size: 18px;
+    width: 15rem;
+    background-color: white;
+    color: black;
+    border: none;
+
+ }
+  
+
  #buttonLearn {
-width: 13rem;
-    height: 5rem;
+    border: none;
+    padding-top: 0;
+    width: 13rem;
+    height: 3rem;
     font-size: 30px;
     background-color: rgb(0, 0, 190);
  }
 
+  #buttonLearn:hover {
+    background-color:rgb(61, 61, 247);;
+  }
+
 
  #buttonFilter{
-    width: 8rem;
-        height: 3rem;
-        font-size: 20px;
-        background-color: rgb(0, 0, 190);
-       
-    
- }
-
- #filterEmissions{
-    padding: 1%;
-    margin: 0%;
-    background:none;
     border: none;
-    font-weight: bold;
-    color: black;
+    padding-top: 0;
+    width: 8rem;
+    height: 2rem;
+    font-size: 20px;
+    background-color: rgb(0, 0, 190);
+       
  }
 
- #widths{
-    width: 100rem !important;
+ #buttonFilter:hover {
+     background-color: rgb(61, 61, 247);
+     ;
  }
 
- #filterInitial {
-    color: green;
-    background-color: green;
+ #buttonTop
+ {background-color: rgb(0, 0, 190) !important;
  }
+
+  #buttonTop:hover {
+      background-color: rgb(61, 61, 247) !important;
+      ;
+  }
+
+   #butClean {
+       background-color: rgb(0, 0, 190) !important;
+   }
+
+   #butClean:hover {
+       background-color: rgb(61, 61, 247) !important;
+       ;
+   }
+
+        #marginleft {
+            margin-left: 0% !important;
+    
+        }
+
+ #filterEmissions {
+     padding: 1%;
+     margin: 0%;
+     background: none;
+     border: none;
+     font-weight: bold;
+     color: black;
+ }
+
+ #dataBold {
+    width: bold !important;
+ }
+
+
+
 
