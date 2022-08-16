@@ -1,11 +1,10 @@
 /* /// PENDINGS
-.Header
-.Acs.desc emmissions - FINDE
-.Search bar - LUNES
-
-.combinar Filters - LUNES
-.Style - MARTES 
+.Header - martes
+.Acs.desc emmissions - MARTES
+.button search - martes
+.Style - MIERCOLES
     Flechas acc
+    color & fonts
 .Ajustar Texto modal - MARTES
 .Done filters button?
 
@@ -13,25 +12,27 @@
 
 
 ////// popover bootstrap
-const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+// const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+// const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
 
-///// FETCH DATA
+// ///// FETCH DATA
 
-let urlOne = "https://beta3.api.climatiq.io/search?results_per_page=100&page=1";
-let urlTwo = "https://beta3.api.climatiq.io/search?results_per_page=100&page=2";
-let urls = [urlOne,urlTwo]
-var myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
+// let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1&uuid = ${id}`;
+// let urlTwo = "https://beta3.api.climatiq.io/search?results_per_page=100&page=2";
+// let urls = [urlOne,urlTwo]
+// var myHeaders = new Headers();
+// myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
 
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow'
-};
+// var requestOptions = {
+//   method: 'GET',
+//   headers: myHeaders,
+//   redirect: 'follow'
+// };
 
-const fetchData = async () => {
+
+    
+     
 // try {  
 //     fetch(urlOne, requestOptions)
 //         .then((response) => {
@@ -53,30 +54,95 @@ const fetchData = async () => {
     // return fetch(url,requestOptions).then(response=> response.json())
     // })).then((results) => console.log('allData :>> ', results))
 
-    const accTitles = document.getElementById("titles");
-    accTitles.classList.add("invisible")
+    //const accTitles = document.getElementById("titles");
+    //accTitles.classList.add("invisible")
+
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+
+
+///// FETCH DATA
+const fetchData = async (data) => {
+
+let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1`;
+let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2`; 
+    
+let urls = [urlOne,urlTwo]
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
     const butClean = document.getElementById("butClean");
     butClean.classList.add("invisible");
      try {
          const responses = await Promise.all(urls.map((url) => {
             
-            const response = fetch(url, requestOptions);
+             const response = fetch(url, requestOptions);
+             
             return response;
         })); 
         const resultOne = await responses[0].json();
         const resultTwo = await responses[1].json();
          const allData = [...resultOne.results, ...resultTwo.results]
         
-        //  displayData(allData);
-        // const LD  = responses[i].results
-        const spinner = document.getElementById("spinner");
-         spinner.classList.remove("invisible");
-        myController(allData);
+         myController(allData)
+        
      } catch (error) {
          console.log('error :>> ', error);
     } 
     
 }; 
+
+/////// FETCH DATA SEARCH
+
+const fetchDataSearch = async (query) => {
+
+          let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1&query=${query}`;
+ let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2&query=${query}`; 
+
+let urls = [urlOne,urlTwo]
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+
+    const butClean = document.getElementById("butClean");
+    butClean.classList.add("invisible");
+     try {
+         const responses = await Promise.all(urls.map((url) => {
+            
+             const response = fetch(url, requestOptions);
+             
+            return response;
+        })); 
+        const resultOne = await responses[0].json();
+        const resultTwo = await responses[1].json();
+         const allData = [...resultOne.results, ...resultTwo.results]
+        
+        
+        //  displayData(allData);
+        // const LD  = responses[i].results
+        //const spinner = document.getElementById("spinner");
+        //spinner.classList.remove("invisible");
+         createAcc(allData)
+        
+     } catch (error) {
+         console.log('error :>> ', error);
+    } 
+    
+}; 
+
+
+
    
     
 /* function fetchData() {
@@ -94,15 +160,17 @@ const fetchData = async () => {
 ////////////// ACCORDION
 
 const createAcc = (data) => {
+    
     const divAccordion = document.getElementById("accordionFlushExample");
-    divAccordion.innerHTML = ""
+    divAccordion.innerHTML = "";
+    document.getElementById("searchBar").value = "";
     const spinner = document.getElementById("spinner");
     spinner.classList.add("invisible");
     const butClean = document.getElementById("butClean");
     butClean.classList.remove("invisible");
     const accTitles = document.getElementById("titles");
     accTitles.classList.remove("invisible")
-  
+ 
     for (let i = 0; i < data.length; i++) {
     let divAcItem = document.createElement("div")
     divAcItem.setAttribute("class", "accordion-item container ")
@@ -200,7 +268,9 @@ const createAcc = (data) => {
     h2Ac.appendChild(button)
     divAcItem.appendChild(h2Ac)
     divAcItem.appendChild(divCollpse)
-   divAccordion.appendChild(divAcItem)   
+        divAccordion.appendChild(divAcItem)   
+        
+        
 }
 
 }
@@ -329,16 +399,7 @@ const createDropdownUn = (liveData) => {
 
 
 //// EVENTS////////////////////////////////////////////
-////// Display
-/* const setEventlistenersOrder = (data) => {
-    document.querySelector("#butOrder").addEventListener("change", (event) => {
-        let orderValue = ""
-        console.log('selectorworking')
-    console.log(event.target.value);
-    orderValue = event.target.value
-    filterOrder(data); 
-    });
-} */
+
 
 
 /// NAME
@@ -436,19 +497,7 @@ const setEventlistenersUn = (data) => {
 
 
 //// filter dropdowns////////////////////////////////////////////
-///// display
-const filterOrder = (data) => {
-    const dropDownValueOrder = document.querySelector("#butOrder").value;
-    const order =
-        orderFunction((order) => {
-        if (dropDownValueOrder[0].clicked == true) { console.log (data.factor.sort((a, b) => b - a))
-        }
-        else {
-            console.log (data.factor.sort((a, b) => a - b))
-        } 
-    });
-    createAcc(order);
-}; 
+
 
 ////NAME
 
@@ -462,16 +511,17 @@ const filterDropdown = (data) => {
     const dropDownValueMet = document.querySelector("#metIn").value; 
     const dropDownValueUn = document.querySelector("#unIn").value; 
     const filteredData = data.filter((data) => {
-        return (data.name === dropDownValueAct || dropDownValueAct === "all") 
-            && (data.category === dropDownValueCat || dropDownValueCat === "all")
-            && (data.region_name === dropDownValueReg || dropDownValueReg === "all")
+        return ((
+data.name === dropDownValueAct || dropDownValueAct === "all" ) 
+            && (data.category === dropDownValueCat || dropDownValueCat === "all") 
+            && (data.region_name === dropDownValueReg || dropDownValueReg === "all")  
             && (data.source === dropDownValueSo || dropDownValueSo === "all")
             && (data.factor_calculation_origin === dropDownValueOr || dropDownValueOr === "all")
             && (data.year === dropDownValueYe || dropDownValueYe === "all")
             && (data.factor_calculation_method === dropDownValueMet || dropDownValueMet === "all")
-            && (data.unit === dropDownValueUn || dropDownValueUn === "all");
+            && (data.unit === dropDownValueUn || dropDownValueUn === "all")); 
     })
-    console.log(filteredData);
+   
     createAcc(filteredData)
 };
 
@@ -596,10 +646,85 @@ butClean.addEventListener('click', () => {
 }); 
 
 
+//////// ORDER
+////EVENT 
+const setEventlistenersOrder = (data) => { 
+    document.querySelector("#butOrder").addEventListener("change", (event) => {
+        let orderValue = ""
+        console.log(event.target.value);
+        orderValue = event.target.value
+        filterOrder(data); 
+    });
+} 
+
+
+/* const setEventlistenersOr = (data) => {
+    document.querySelector("#orIn").addEventListener("change", (event) => {
+        let orValue = ""
+        console.log(event.target.value);
+        orValue = event.target.value
+        filterDropdown(data); 
+    });
+}; */
+
+
+///// filter ORDER
+const filterOrder = (data) => {
+    const dropDownValueOrder = document.querySelector("#butOrder").index;   
+    let order = ""
+    order.forEach(data => {data.factor.sort((a, b) => a - b)  
+    });
+
+    // createAcc(ordered);
+    
+    
+
+
+    //const ordered = orderFunction((data) => {
+      //  console.log('works');
+    //});
+   
+}; 
+
+/* const filterDropdownCat = (data) => {
+    const dropDownValue = document.querySelector("#catIn").value; 
+    const filteredCat = data.filter((data) => {
+        return data.category === dropDownValue || dropDownValue === "all";
+    })
+  if ( dropDownValue === "all") {createAcc(data)
+    createAcc(data);
+} else {createAcc(filteredCat); 
+}
+}; 
+ */
+
+////////////////////// SEARCH BAR /////////////////////
+////// Event
+const searchEvent = () => {
+    const search = document.getElementById("searchBar");
+
+    search.addEventListener("input", (event) => {
+        query = event.target.value;
+   
+    });
+    search.addEventListener("keyup", (e) => {
+        if (e.key === "Enter") {
+   
+            fetchDataSearch(query)
+            //createAcc(query);
+        }
+    });
+    function funcButSearch() {
+        fetchDataSearch(query);
+    };
+
+}  
+
+
 /////// FUNCTION CONTROLLER ////////////////////////////////////////////
 function myController(data) {
-    
-//setEventlistenersOrder(data);
+     //createAcc(data);
+    setEventlistenersOrder(data);
   //  filterOrder (data);
     createDropdown(data);
     setEventlisteners(data);
@@ -619,4 +744,6 @@ createDropdownMet(data);
     setEventlistenersUn(data);
     
 };
-fetchData();
+
+searchEvent();
+fetchData()
