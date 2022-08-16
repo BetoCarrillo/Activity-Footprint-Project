@@ -1,19 +1,20 @@
-/* /// PENDINGS
+/* /// To Dos
 .Header - martes
-.Acs.desc emmissions - MARTES
-.button search - martes
+.Acs.desc emmissions 
+.Deploy
+
 .Style - MIERCOLES
     Flechas acc
     color & fonts
-.Ajustar Texto modal - MARTES
-.Done filters button?
-
+    color modal
+    titles acc
+.more pages - miercoless
 //// */
 
 
 ////// popover bootstrap
 // const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-// const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+// const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.filterEmissionsPopover(popoverTriggerEl))
 
 
 // ///// FETCH DATA
@@ -77,8 +78,8 @@ var requestOptions = {
   headers: myHeaders,
   redirect: 'follow'
 };
-    const butClean = document.getElementById("butClean");
-    butClean.classList.add("invisible");
+  
+
      try {
          const responses = await Promise.all(urls.map((url) => {
             
@@ -100,10 +101,10 @@ var requestOptions = {
 
 /////// FETCH DATA SEARCH
 
-const fetchDataSearch = async (query) => {
+const fetchDataSearch = async () => {
 
-          let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1&query=${query}`;
- let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2&query=${query}`; 
+let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1&query=${query}`;
+let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2&query=${query}`; 
 
 let urls = [urlOne,urlTwo]
 var myHeaders = new Headers();
@@ -115,8 +116,6 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-    const butClean = document.getElementById("butClean");
-    butClean.classList.add("invisible");
      try {
          const responses = await Promise.all(urls.map((url) => {
             
@@ -128,12 +127,65 @@ var requestOptions = {
         const resultTwo = await responses[1].json();
          const allData = [...resultOne.results, ...resultTwo.results]
         
-        
-        //  displayData(allData);
-        // const LD  = responses[i].results
-        //const spinner = document.getElementById("spinner");
-        //spinner.classList.remove("invisible");
          createAcc(allData)
+        
+     } catch (error) {
+         console.log('error :>> ', error);
+    } 
+    
+}; 
+
+////////////////// Geolocation
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(getRegLocation);
+  } else {
+    alert("Geolocation not accepted")
+  }
+}
+
+async function getRegLocation(position) {
+    //console.log(position);
+    const {latitute, longitude} = position.coords
+    let url = `//api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitute}&longitude=${longitude}&localityLanguage=en`
+    try {
+        const response = await fetch(url)
+        const data = await response.json()
+        //console.log(data);
+        fetchDataGeo(data.countryCode);
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+/////// FETCH DATA GEOLOCATION
+
+const fetchDataGeo = async (countryCode) => {
+
+let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1&region=${countryCode}`;
+let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2&region=${countryCode}`; 
+
+    let urls = [urlOne, urlTwo];
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+ 
+     try {
+         const responses = await Promise.all(urls.map((url) => {
+            
+             const response = fetch(url, requestOptions);
+             
+            return response;
+        })); 
+        const resultOne = await responses[0].json();
+        const resultTwo = await responses[1].json();
+        const allData = [...resultOne.results, ...resultTwo.results]
+        createAcc(allData)
         
      } catch (error) {
          console.log('error :>> ', error);
@@ -143,7 +195,6 @@ var requestOptions = {
 
 
 
-   
     
 /* function fetchData() {
     fetch(url, requestOptions)
@@ -168,12 +219,14 @@ const createAcc = (data) => {
     spinner.classList.add("invisible");
     const butClean = document.getElementById("butClean");
     butClean.classList.remove("invisible");
+    const butDone = document.getElementById("butDone");
+    butDone.classList.remove("invisible");
     const accTitles = document.getElementById("titles");
     accTitles.classList.remove("invisible")
  
     for (let i = 0; i < data.length; i++) {
     let divAcItem = document.createElement("div")
-    divAcItem.setAttribute("class", "accordion-item container ")
+    divAcItem.setAttribute("class", "accordion-item containers")
     divAcItem.setAttribute("style", "background-color: #e7f1ff")
     divAcItem.setAttribute("id", "noPad")
     
@@ -272,7 +325,6 @@ const createAcc = (data) => {
         
         
 }
-
 }
 
 //////// Dropdown options////////////////////////////////////////////
@@ -404,6 +456,7 @@ const createDropdownUn = (liveData) => {
 
 /// NAME
 const setEventlisteners = (data) => {
+    
     document.querySelector("#nameIn").addEventListener("change", (event) => {
         let nameValue = ""
         //console.log('selectorworking');
@@ -499,7 +552,7 @@ const setEventlistenersUn = (data) => {
 //// filter dropdowns////////////////////////////////////////////
 
 
-////NAME
+////FILTERS DROPDOWN
 
 const filterDropdown = (data) => {
     const dropDownValueAct = document.querySelector("#nameIn").value; 
@@ -511,117 +564,18 @@ const filterDropdown = (data) => {
     const dropDownValueMet = document.querySelector("#metIn").value; 
     const dropDownValueUn = document.querySelector("#unIn").value; 
     const filteredData = data.filter((data) => {
-        return ((
-data.name === dropDownValueAct || dropDownValueAct === "all" ) 
-            && (data.category === dropDownValueCat || dropDownValueCat === "all") 
-            && (data.region_name === dropDownValueReg || dropDownValueReg === "all")  
-            && (data.source === dropDownValueSo || dropDownValueSo === "all")
-            && (data.factor_calculation_origin === dropDownValueOr || dropDownValueOr === "all")
-            && (data.year === dropDownValueYe || dropDownValueYe === "all")
-            && (data.factor_calculation_method === dropDownValueMet || dropDownValueMet === "all")
-            && (data.unit === dropDownValueUn || dropDownValueUn === "all")); 
+        return ((  dropDownValueAct === "all"||data.name === dropDownValueAct ||  dropDownValueAct === 0) 
+            && ( dropDownValueCat === "all"||data.category === dropDownValueCat ||dropDownValueCat === 0 ) 
+            && (data.region_name === dropDownValueReg || dropDownValueReg === "all" ||dropDownValueReg === 0)  
+            && (data.source === dropDownValueSo || dropDownValueSo === "all" ||dropDownValueSo === 0)
+            && (data.factor_calculation_origin === dropDownValueOr || dropDownValueOr === "all"||dropDownValueOr === 0)
+            && (data.year === dropDownValueYe || dropDownValueYe === "all"||dropDownValueYe === 0)
+            && (data.factor_calculation_method === dropDownValueMet || dropDownValueMet === "all"||dropDownValueMet === 0)
+            && (data.unit === dropDownValueUn || dropDownValueUn === "all"||dropDownValueUn === 0)); 
     })
    
     createAcc(filteredData)
 };
-
-/////CATEGORY
-
-/* const filterDropdownCat = (data) => {
-    const dropDownValue = document.querySelector("#catIn").value; 
-    const filteredCat = data.filter((data) => {
-        return data.category === dropDownValue || dropDownValue === "all";
-    })
-  if ( dropDownValue === "all") {createAcc(data)
-    createAcc(data);
-} else {createAcc(filteredCat); 
-}
-}; 
- */
-/////// REGION
-
-
-/* const filterDropdownReg = (data) => {
-    const dropDownValue = document.querySelector("#regIn").value; 
-    const filteredReg = data.filter((data) => {
-        return data.region_name  === dropDownValue;  
-    })
-   if ( dropDownValue === "all") {createAcc(data)
-    createAcc(data);
-} else {createAcc(filteredReg); 
-}
-}; 
-
-/////SOURCE
-
-/* const filterDropdownSo = (data) => {
-    const dropDownValue = document.querySelector("#soIn").value; 
-    const filteredSo = data.filter((data) => {
-        return data.source === dropDownValue || dropDownValue === "all"; 
-    })
-   if ( dropDownValue === "all") {createAcc(data)
-    createAcc(data);
-} else {createAcc(filteredSo); 
-}
-
-};  */
- 
-
-/////ORIGIN
-
-/* const filterDropdownOr = (data) => {
-    const dropDownValue = document.querySelector("#orIn").value; 
-    const filteredOr = data.filter((data) => {
-        return data.factor_calculation_origin  === dropDownValue || dropDownValue === "all"; 
-    })
-   if ( dropDownValue === "all") {createAcc(data)
-    createAcc(data);
-} else {createAcc(filteredOr); 
-}
-};  */
-
-
-/////YEAR
-
-/* const filterDropdownYe = (data) => {
-    const dropDownValue = document.querySelector("#yeIn").value; 
-    const filteredYe = data.filter((data) => {
-        return data.year  === dropDownValue;  
-    })
-   if ( dropDownValue === "all") {createAcc(data)
-    createAcc(data);
-} else {createAcc(filteredYe); 
-}
-};  */
- 
-
-/////CALCULATION METHOD
-
-/* const filterDropdownMet = (data) => {
-    const dropDownValue = document.querySelector("#metIn").value; 
-    const filteredMet = data.filter((data) => {
-        return data.factor_calculation_method  === dropDownValue || dropDownValue === "all";   
-    })
-if ( dropDownValue === "all") {createAcc(data)
-    createAcc(data);
-} else {createAcc(filteredMet); 
-}
-};
- */
-
-/////UNIT TYPE
-
-/* const filterDropdownUn = (data) => {
-    const dropDownValue = document.querySelector("#unIn").value; 
-    const filteredUn = data.filter((data) => {
-        return data.unit  === dropDownValue || dropDownValue === "all";   
-    })
-if ( dropDownValue === "all") {createAcc(data)
-    createAcc(data);
-} else {createAcc(filteredUn); 
-}
-};  */
-
 
 
 ////////////// Back to top button
@@ -702,28 +656,47 @@ const filterOrder = (data) => {
 ////// Event
 const searchEvent = () => {
     const search = document.getElementById("searchBar");
-
+    const buttonSearch = document.getElementById("searchBut");
     search.addEventListener("input", (event) => {
-        query = event.target.value;
-   
+    query = event.target.value;
+     
     });
     search.addEventListener("keyup", (e) => {
         if (e.key === "Enter") {
-   
             fetchDataSearch(query)
             //createAcc(query);
         }
     });
-    function funcButSearch() {
-        fetchDataSearch(query);
-    };
+    
+    buttonSearch.addEventListener("click", () => {
+        if (searchBar.value === "") {
+    window.alert("Please search for something (or use the filters)")
+        } else { fetchDataSearch(query); }
+        
+    });
 
 }  
+
+/////// Clean button
+/* const butClean = document.getElementById('butClean');
+butClean.addEventListener('click', () => { 
+    window.location.reload()
+}); 
+ */
+
+
+
+
+
+
 
 
 /////// FUNCTION CONTROLLER ////////////////////////////////////////////
 function myController(data) {
+    searchEvent();
+    fetchDataGeo();
      //createAcc(data);
+    getLocation();
     setEventlistenersOrder(data);
   //  filterOrder (data);
     createDropdown(data);
@@ -745,5 +718,7 @@ createDropdownMet(data);
     
 };
 
-searchEvent();
+
 fetchData()
+ 
+
