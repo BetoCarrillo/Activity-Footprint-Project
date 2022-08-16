@@ -1,58 +1,148 @@
-/* GOOGLE FONTS */
+/* GENERAL */
 
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 48
+.lightBlue {
+    background-color: rgb(221, 221, 221);
 }
+
+/* POSITIONING */
 
 .positioning {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
-}
-#heading {text-align: center; 
-    font-size: 90px;
-    padding-top: 0.3em;    
-    color:
-    rgb(0, 0, 190);
-  
-}
 
+}
 
 #align {
     text-align: center;
- 
+
 }
+
+#noMargin {
+    margin: 0% !important;
+
+}
+
+.noMargin {
+    margin: 0%;
+    background-color: white;
+
+
+}
+
+#noPad {
+    padding: 0%;
+}
+
+#marginleft {
+    margin-left: 0% !important;
+
+}
+
+
+.size {
+    width: 95%;
+    padding-left: 2rem;
+
+}
+
+/* HEADER */
+
+.headr {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.itemHeadr {
+    padding-right: 2rem;
+}
+
+/* HEADING */
 
 h2{
     background-color: #e7f1ff;
     color: black;
-    width: bold;
-}
-    
-
-#noMargin {margin: 0%;
+    font: sans-serif;
+    font-size: 35px !important;
    
 }
-
-.noMargin{
-    margin: 0%;
-    background-color: white;
     
+#heading {
+    text-align: center;
+    font-size: 120px;
+    padding-top: 0%;
+    color:
+        black;
+    font: sans-serif;
+}
+
+@media only screen and (max-width: 1000px) {
+    h2 {
+        font-size: 0px !important;
+   
+        
+    }
+
+    #heading {font-size: 80px !important;
+}
+
+ #buttonLearn {
+     width: 10rem !important;
+     height: 3rem !important;
+     font-size: 20px !important;
+    
+ }
+
+ #divSearchBar {
+     width: 20rem !important;
+ }
+
 }
 
 
 
-#noPad {padding: 0%;}
 
-/* #sidebar {position: fixed;
-    display: block;
+/* MODAL */
+
+.modal-header{
+    background-color: rgb(221, 221, 221);
 }
- */
+
+.modal-footer{background-color: rgb(221, 221, 221) !important;
+
+}
+
+#modalItemCont{background-color: black;
+
+}
+#modalItemCont:hover {
+    background-color: white !important;
+color: black !important;
+}
+
+#modalItem {
+    background-color:white;
+    color: black;
+
+}
+
+#modalItem:hover {
+    background-color: black !important;
+    color: white !important;
+}
+
+
+/* Search Bar */
+
+#divSearchBar{
+    width: 30rem;
+} 
+ 
+/* SIDEBAR */
+
+
 
  #spinner{
     font-size: 18px;
@@ -63,6 +153,16 @@ h2{
 
  }
 
+ #sideBarPad {
+    padding-right: 0%;
+    background-color: rgb(221, 221, 221);
+
+
+ }
+
+
+
+
  /* BUTTONS */
   
  #buttonLearn {
@@ -71,27 +171,27 @@ h2{
     width: 13rem;
     height: 3rem;
     font-size: 30px;
-    background-color: rgb(0, 0, 190);
+    background-color: black;
  }
 
   #buttonLearn:hover {
-    background-color:rgb(61, 61, 247);;
+    background-color:white;
+    color: black;
   }
 
 
  #buttonFilter{
-    border: none;
+     padding-right: 3rem;
     padding-top: 0;
-    width: 8rem;
-    height: 2rem;
-    font-size: 20px;
-    background-color: rgb(0, 0, 190);
+    height: 4rem;
+    font-size: 50px;
+    background-color: none !important;
+    cursor: pointer;
        
  }
 
  #buttonFilter:hover {
-     background-color: rgb(61, 61, 247);
-     ;
+    background-color: none !important;
  }
 
  #buttonTop
@@ -104,17 +204,18 @@ h2{
   }
 
    #butClean {
-       background-color: lightyellow !important;
+       background-color: white!important;
     color: black;
+    border-radius: 0.3rem !important;
    }
 
    #butClean:hover {
-    background-color: white !important;
-        color: black;
+    background-color: black !important;
+        color: white;
    }
 
 #butDone {
-    background-color: green!important;
+    background-color: rgb(0, 0, 190) !important;
     color: white;
     
 }
@@ -125,40 +226,104 @@ h2{
   
   }
    
-   #searchBut:hover {
-background-color: rgb(0, 0, 190) !important;
+
+
+
+   #searchBut{
+background-color: black !important;
+color: white;
    }
 
-        #marginleft {
-            margin-left: 0% !important;
-    
-        }
+    #searchBut:hover {
+            background-color: white !important;
+                color: black;
+          }
+ 
+
+/* ACCORDION */
+
+ #sideBarAcc {
+     padding-right: 0%;
 
 
+ }
 
-#sideBarPad{
-  padding-right: 0%;
-  padding-left: 15px;
 
-}
+/* FOOTER */
 
-.size{
-    width: 95%;
-    padding-left: 3rem;
-  
-}
-
-.headr{
-display: flex;
-flex-direction: row;
-justify-content: flex-end;
-gap: 1rem;
-}
-
-.itemHeadr{
-    padding-right: 5rem;
-}
 
 .footerInfo{
     text-align: center;
+    background-color: rgb(221, 221, 221);
+}
+
+/* Animation */
+
+.logo:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+#titles{
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+   
+}
+
+
+
+/* GOOGLE FONTS */
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }

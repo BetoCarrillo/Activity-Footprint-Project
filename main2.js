@@ -1,14 +1,11 @@
 /* /// To Dos
-.Header - martes
 .Acs.desc emmissions 
 .Deploy
-
+.filter padding pequeña
 .Style - MIERCOLES
-    Flechas acc
-    color & fonts
-    color modal
-    titles acc
+    limpiar classes
 .more pages - miercoless
+
 //// */
 
 
@@ -61,6 +58,63 @@
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
+////////////////// Geolocation
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(getRegLocation);
+  } else {
+    alert("Geolocation not accepted")
+  }
+}
+
+async function getRegLocation(position) {
+    //console.log(position);
+    const {latitute, longitude} = position.coords
+    let url = `//api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitute}&longitude=${longitude}&localityLanguage=en`
+    try {
+        const response = await fetch(url)
+        const data = await response.json()
+        //console.log(data);
+        fetchDataGeo(data.countryCode);
+    } catch (error) {
+        console.log(error);
+    }
+
+}
+/////// FETCH DATA GEOLOCATION
+
+const fetchDataGeo = async (countryCode) => {
+
+let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1&region=${countryCode}`;
+let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2&region=${countryCode}`; 
+
+    let urls = [urlOne, urlTwo];
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
+ 
+     try {
+         const responses = await Promise.all(urls.map((url) => {
+            
+             const response = fetch(url, requestOptions);
+             
+            return response;
+        })); 
+        const resultOne = await responses[0].json();
+        const resultTwo = await responses[1].json();
+        const allData = [...resultOne.results, ...resultTwo.results]
+        createAcc(allData)
+        
+     } catch (error) {
+         console.log('error :>> ', error);
+    } 
+    
+}; 
 
 
 ///// FETCH DATA
@@ -135,64 +189,6 @@ var requestOptions = {
     
 }; 
 
-////////////////// Geolocation
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(getRegLocation);
-  } else {
-    alert("Geolocation not accepted")
-  }
-}
-
-async function getRegLocation(position) {
-    //console.log(position);
-    const {latitute, longitude} = position.coords
-    let url = `//api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitute}&longitude=${longitude}&localityLanguage=en`
-    try {
-        const response = await fetch(url)
-        const data = await response.json()
-        //console.log(data);
-        fetchDataGeo(data.countryCode);
-    } catch (error) {
-        console.log(error);
-    }
-
-}
-/////// FETCH DATA GEOLOCATION
-
-const fetchDataGeo = async (countryCode) => {
-
-let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1&region=${countryCode}`;
-let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2&region=${countryCode}`; 
-
-    let urls = [urlOne, urlTwo];
-var myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
-
-var requestOptions = {
-  method: 'GET',
-  headers: myHeaders,
-  redirect: 'follow'
-};
- 
-     try {
-         const responses = await Promise.all(urls.map((url) => {
-            
-             const response = fetch(url, requestOptions);
-             
-            return response;
-        })); 
-        const resultOne = await responses[0].json();
-        const resultTwo = await responses[1].json();
-        const allData = [...resultOne.results, ...resultTwo.results]
-        createAcc(allData)
-        
-     } catch (error) {
-         console.log('error :>> ', error);
-    } 
-    
-}; 
-
 
 
     
@@ -227,12 +223,13 @@ const createAcc = (data) => {
     for (let i = 0; i < data.length; i++) {
     let divAcItem = document.createElement("div")
     divAcItem.setAttribute("class", "accordion-item containers")
-    divAcItem.setAttribute("style", "background-color: #e7f1ff")
-    divAcItem.setAttribute("id", "noPad")
+    divAcItem.setAttribute("style", "background-color: rgb(221, 221, 221);")
+   
     
     let h2Ac = document.createElement("div")
     h2Ac.setAttribute("id", "flush-headingOne")
     h2Ac.setAttribute("class", "accordion-header ")
+     h2Ac.setAttribute("style", "background-color: rgb(221, 221, 221) !important;")
  
 
     let button = document.createElement("button")
@@ -243,6 +240,9 @@ const createAcc = (data) => {
     button.setAttribute("aria-expanded", "true")
     button.setAttribute("aria-controls", "flush-collapseOne")
     button.setAttribute("id", "noMargin")
+    button.setAttribute("style", "background-color: white !important; color: black;")
+       
+        
   
     let divName = document.createElement("div")
     divName.setAttribute("class", "col-md-3")

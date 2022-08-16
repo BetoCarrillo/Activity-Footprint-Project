@@ -19,303 +19,324 @@
 
 <body>
     <div class="positioning">
-        <!-- Header -->
-        <div class="headr">
+        <div class="lightBlue">
+            <!-- Header -->
+            <div class="headr">
+                <div>
+                    <a href="https://github.com/BetoCarrillo">
+                        <img src="./Images/GitHub-Mark-64px.png" alt="GitHubProfile" height="55px"
+                            style="padding-top:1.2em;" class="logo shake">
+                    </a>
+                </div>
+                <div class="itemHeadr">
+                    <a href="https://www.linkedin.com/in/alberto-carrillo-ch/" target="_blank">
+                        <img src="./Images/icons8-linkedin-circled-60.png" alt="LinkedinProfile" height="60px"
+                            style="padding-top:0.9em;" class="logo shake">
+                    </a>
+                </div>
+            </div>
+
+
+
             <div>
-                <a href="https://github.com/BetoCarrillo">
-                    <img src="./Images/GitHub-Mark-64px.png" alt="GitHubProfile" height="55px"
-                        style="padding-top:1.2em;">
-                </a>
-            </div>
-            <div class="itemHeadr">
-                <a href="https://www.linkedin.com/in/alberto-carrillo-ch/" target="_blank">
-                    <img src="./Images/icons8-linkedin-circled-60.png" alt="LinkedinProfile" height="60px"
-                        style="padding-top:0.9em;">
-                </a>
-
-
-            </div>
-        </div>
-
-
-
-        <div>
-            <!--   HEADING  -->
-            <h1 id="heading">Climate Footprint</h1>
-        </div> <br>
-        <!-- MAIN -->
-        <div>
-            <!--   MODAL   -->
-            <div class="text-center">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                    id="buttonLearn">
-                    Learn more
-                </button>
-            </div>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">More Info</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body container text-start">
-                            <p>This website is developed as Project 2 of Code Academy Berlin. It pulls live data from
-                                <a href="https://www.climatiq.io/docs" target="_blank" data-bs-toggle="tooltip"
-                                    title="Tooltip">Climatiq
-                                    API</a> displaying global emission factors worldwide.
-                            </p>
-                            <p>Climatiq API converts operational activity data into CO2e (carbon
-                                dioxide equivalent) estimates, allowing to calculate each activity's impact on
-                                the
-                                environment.
-                            </p>
-                            <p> <strong> What is an Emission Factor?</strong>
-                                An emission factor is a value that estimates the quantity of a gas with a global
-                                warming
-                                potential (GWP) released into the atmosphere, per some unit related to a particular
-                                activity.</p>
-                            <p> Make use of the search bar and filters to toggle around the different activities using
-                                parameters such as:
-
-                                <br>
-                            </p>
-                            <div class="row justify-content-md-center" style="column-gap: 2rem;">
-                                <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2 "
-                                    data-bs-toggle="popover" title="Activity"
-                                    data-bs-content="Activity's name">Activity</a>
-                                <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
-                                    data-bs-toggle="popover" title="Category"
-                                    data-bs-content="Emission factor category.">Category</a><a href="#" role="button"
-                                    class="btn btn-secondary col-md-3 gy-2" data-bs-toggle="popover" title="Region"
-                                    data-bs-content="Geographic region to which the emission factor applies.">
-                                    Region</a>
+                <!--   HEADING  -->
+                <h1 id="heading">Climate Footprint</h1>
+            </div> <br>
+            <!-- MAIN -->
+            <div>
+                <!--   MODAL   -->
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        id="buttonLearn">
+                        Learn more
+                    </button>
+                </div>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">More Info</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
-                            <div class="row justify-content-md-center" style="column-gap: 2rem;">
-                                <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
-                                    data-bs-toggle="popover" title="Source"
-                                    data-bs-content="Emission factor publisher.">Source</a>
-                                <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
-                                    data-bs-toggle="popover" title="Origin"
-                                    data-bs-content="Indicates whether the CO2e emission factor provided in the response was provided by the mentioned source or calculated by Climatiq.">Origin</a>
-                                <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
-                                    data-bs-toggle="popover" title="Year"
-                                    data-bs-content="Year for which the emission factor applies.">Year</a>
+                            <div class="modal-body container text-start">
+                                <p>This website is developed as part of Project 2 of the Code Academy Berlin. It pulls
+                                    live
+                                    data from
+                                    <a href="https://www.climatiq.io/docs" target="_blank" data-bs-toggle="tooltip"
+                                        title="Tooltip">Climatiq
+                                        API</a> displaying global emission factors worldwide.
+                                </p>
+                                <p>Climatiq API converts operational activity data into CO2e (carbon
+                                    dioxide equivalent) estimates, allowing to calculate each activity's impact on
+                                    the
+                                    environment.
+                                </p>
+                                <p> <strong> What is an Emission Factor?</strong>
+                                    An emission factor is a value that estimates the quantity of a gas with a global
+                                    warming
+                                    potential (GWP) released into the atmosphere, per some unit related to a particular
+                                    activity.</p>
+                                <p> Make use of the search bar and filters to toggle around the different activities
+                                    using
+                                    parameters such as:
+
+                                    <br>
+                                </p>
+                                <div class="row justify-content-md-center" style="column-gap: 2rem;">
+                                    <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2 "
+                                        data-bs-toggle="popover" title="Activity" data-bs-content="Activity's name"
+                                        id="modalItem">Activity</a>
+                                    <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
+                                        data-bs-toggle="popover" title="Category"
+                                        data-bs-content="Emission factor category." id="modalItem">Category</a><a
+                                        href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
+                                        data-bs-toggle="popover" title="Region"
+                                        data-bs-content="Geographic region to which the emission factor applies."
+                                        id="modalItem">
+                                        Country</a>
+                                </div>
+                                <div class="row justify-content-md-center" style="column-gap: 2rem;">
+                                    <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
+                                        data-bs-toggle="popover" title="Source"
+                                        data-bs-content="Emission factor publisher." id="modalItem">Source</a>
+                                    <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
+                                        data-bs-toggle="popover" title="Origin"
+                                        data-bs-content="Indicates whether the CO2e emission factor provided in the response was provided by the mentioned source or calculated by Climatiq."
+                                        id="modalItem">Origin</a>
+                                    <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
+                                        data-bs-toggle="popover" title="Year"
+                                        data-bs-content="Year for which the emission factor applies."
+                                        id="modalItem">Year</a>
+                                </div>
+                                <div class="row justify-content-md-center" style="column-gap: 2rem;">
+                                    <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
+                                        data-bs-toggle="popover" title="Calculation Method"
+                                        data-bs-content="Indicates which conversion values were used (IPCC 4th or 5th Assessment Report) to generate the returned CO2e emission factor."
+                                        id="modalItem">Calculation
+                                        Method</a>
+                                    <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
+                                        data-bs-toggle="popover" title="Unit type"
+                                        data-bs-content="The unit in which the factor field is expressed."
+                                        id="modalItem">Unit
+                                        type</a>
+                                    <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
+                                        data-bs-toggle="popover" title="Search Bar"
+                                        data-bs-content="Search for emissions freely using the search bar"
+                                        id="modalItem">Search</a>
+                                </div>
+                                <div class="row justify-content-md-center">
+                                    <a href="#" role="button" class="btn btn-secondary col-md-10 gy-2"
+                                        data-bs-toggle="popover" title="Emission Factor"
+                                        data-bs-content="Display emissions by ascending or descending order."
+                                        id="modalItem">Order
+                                        Emission
+                                        Factors</a>
+                                </div>
                             </div>
-                            <div class="row justify-content-md-center" style="column-gap: 2rem;">
-                                <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
-                                    data-bs-toggle="popover" title="Calculation Method"
-                                    data-bs-content="Indicates which conversion values were used (IPCC 4th or 5th Assessment Report) to generate the returned CO2e emission factor.">Calculation
-                                    Method</a>
-                                <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
-                                    data-bs-toggle="popover" title="Unit type"
-                                    data-bs-content="The unit in which the factor field is expressed.">Unit
-                                    type</a>
-                                <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
-                                    data-bs-toggle="popover" title="Search Bar"
-                                    data-bs-content="Search for emissions freely using the search bar">Search</a>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                    id="modalItemCont">Continue</button>
                             </div>
-                            <div class="row justify-content-md-center">
-                                <a href="#" role="button" class="btn btn-secondary col-md-10 gy-2"
-                                    data-bs-toggle="popover" title="Emission Factor"
-                                    data-bs-content="Display emissions by ascending or descending order.">Order Emission
-                                    Factors</a>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue</button>
                         </div>
                     </div>
-                </div>
-            </div> <br>
-        </div>
-        <div>
-            <!-- SEARCH BAR -->
-            <div class="input-group mb-3 container" style="width: 30rem;">
-                <button class="btn btn-outline-secondary" type="button" id="searchBut"><span
-                        class="material-symbols-outlined">
-                        search
-                    </span></button>
-                <input type="text" class="form-control" placeholder="Search for activities" aria-label="Search"
-                    id="searchBar">
+                </div> <br>
             </div>
-        </div>
-        <div>
-            <!-- DISPLAY BUTTON -->
             <div>
-                <select name="display" id="butOrder" style="width:5rem; border: none;">
-                    <option value="ascending">Ascending</option>
-                    <option value="descending">Descending</option>
-                </select>
+                <!-- SEARCH BAR -->
+                <div class="input-group mb-3 container" id="divSearchBar">
+                    <button class="btn btn-outline-secondary" type="button" id="searchBut"><span
+                            class="material-symbols-outlined">
+                            search
+                        </span></button>
+                    <input type="text" class="form-control" placeholder="Search for activities" aria-label="Search"
+                        id="searchBar">
+                </div>
+            </div>
+            <div>
+                <!-- DISPLAY BUTTON -->
+                <div>
+                    <select name="display" id="butOrder" style="width:5rem; border: none;">
+                        <option value="ascending">Ascending</option>
+                        <option value="descending">Descending</option>
+                    </select>
+                </div>
             </div>
         </div>
         <div>
-            <div id="noMargin">
-                <div class="row">
+            <div>
+                <div class="row" id="noMargin">
                     <!-- SIDEBAR  -->
                     <div class="col-xl-2" id="sideBarPad">
-                        <div>
-                            <div class="text-center">
-                                <button id="spinner" class="btn btn-primary col-lg-auto" type="button" disabled>
-                                    <span class="spinner-border spinner-border-sm" role="status"
-                                        aria-hidden="true"></span>
-                                    Choose filters..
-                                </button>
+                        <div class="text-center">
+                            <button id="spinner" class="btn btn-primary col-lg-auto" type="button" disabled>
+                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                Choose filters..
+                            </button>
+                        </div>
+                        <div class="text-end">
+                            <span class=" btn-primary d-lg-none material-symbols-outlined" id="buttonFilter"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"
+                                aria-controls="offcanvasResponsive">
+                                tune
+                            </span>
+                        </div>
+                        <div class="offcanvas-lg offcanvas-end " tabindex="-1" id="offcanvasResponsive"
+                            aria-labelledby="offcanvasResponsiveLabel">
+                            <div class="offcanvas-header ">
+                                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Filter activities</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
                             </div>
-                            <br>
-                            <div class="text-center">
-                                <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvasResponsive" aria-controls="offcanvasResponsive"
-                                    id="buttonFilter">Filters</button>
-                            </div>
-                            <div class="offcanvas-lg offcanvas-end " tabindex="-1" id="offcanvasResponsive"
-                                aria-labelledby="offcanvasResponsiveLabel">
-                                <div class="offcanvas-header ">
-                                    <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Filter activities</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                        data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
-                                </div>
-                                <div class="offcanvas-header">
-                                    <div>
-                                        <div>
-                                            <button class="invisible" data-bs-dismiss="offcanvas"
-                                                data-bs-target="#offcanvasResponsive" id="butDone">
-                                                <span class="material-symbols-sharp">
-                                                    manage_search
-                                                </span></button>
-                                        </div>
-                                        <br>
+                            <div class="offcanvas-header">
+                                <div>
+                                    <div class="text-center">
+                                        <span class=" btn-primary d-lg-none material-symbols-outlined" id="buttonFilter"
+                                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"
+                                            aria-controls="offcanvasResponsive">
+                                            tune
+                                        </span>
+
+
+
+                                        <button class="invisible" data-bs-dismiss="offcanvas"
+                                            data-bs-target="#offcanvasResponsive" id="butDone">
+                                            <span class="material-symbols-outlined">
+                                                tune
+                                            </span></button>
                                     </div>
+
+                                    <br>
                                 </div>
-                                <div class="offcanvas-body" style="justify-content:center;">
-                                    <div>
-                                        <div class="row" id="filterRow">
-                                            <div>
-                                                <strong class="col-lg-3 ">ACTIVITY</strong>
-                                            </div>
-                                            <div>
-                                                <div class="col-lg-12">
-                                                    <select name="Activity select" id="nameIn" style="width:10rem;">
-                                                        <option value="all">All Activities</option>
-                                                    </select>
-                                                </div>
+                            </div>
+                            <div class="offcanvas-body" style="justify-content:center;">
+                                <div>
+                                    <div class="row" id="filterRow">
+                                        <div>
+                                            <strong class="col-lg-3 ">ACTIVITY</strong>
+                                        </div>
+                                        <div>
+                                            <div class="col-lg-12">
+                                                <select name="Activity select" id="nameIn" style="width:10rem;">
+                                                    <option value="all">All Activities</option>
+                                                </select>
                                             </div>
                                         </div>
-                                        <br>
-                                        <div class="row">
-                                            <div>
-                                                <strong class="col-md-3">CATEGORY</strong>
-                                            </div>
-                                            <div>
-                                                <div class="col-md-12">
-                                                    <select name="category" id="catIn" style="width:10rem;">
-                                                        <option value="all">All Categories</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div>
+                                            <strong class="col-md-3">CATEGORY</strong>
                                         </div>
-                                        <br>
-                                        <div class="row">
-                                            <div>
-                                                <strong class="col-md-3">REGION</strong>
-                                            </div>
-
-                                            <div>
-                                                <div class="col-md-12">
-                                                    <select name="region" id="regIn" style="width:10rem;">
-                                                        <option value="all">All Regions</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <div class="row">
-                                            <div>
-                                                <strong class="col-md-3">SOURCE</strong>
-                                            </div>
-                                            <div>
-                                                <div class="col-md-12">
-                                                    <select name="source" id="soIn" style="width:10rem;">
-                                                        <option value="all">All Sources</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <div class="row">
-                                            <div>
-                                                <strong class="col-md-3">ORIGIN</strong>
-                                            </div>
-                                            <div>
-                                                <div class="col-md-12">
-                                                    <select name="origin" id="orIn" style="width:10rem;">
-                                                        <option value="all">All Origins</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <div class="row">
-                                            <div>
-                                                <strong class="col-md-3">YEAR</strong>
-                                            </div>
-
-                                            <div>
-                                                <div class="col-md-12">
-                                                    <select name="year" id="yeIn" style="width:10rem;">
-                                                        <option value="all">All Years</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <div class="row">
-                                            <div>
-                                                <strong class="col-md-3">METHOD</strong>
-                                            </div>
-
-                                            <div>
-                                                <div class="col-md-12">
-                                                    <select name="method" id="metIn" style="width:10rem;">
-                                                        <option value="all">All Methods</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <br>
-                                        <div class="row">
-                                            <div>
-                                                <div>
-                                                    <strong class="col-md-3">UNIT TYPE</strong>
-                                                </div>
-                                                <div>
-                                                    <div class="col-md-12">
-                                                        <select name="unit" id="unIn" style="width:10rem;">
-
-                                                            <option value="all">All Units</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> <br>
-
-                                        <br>
-                                        <!-- Clean filters -->
-                                        <div class="row">
+                                        <div>
                                             <div class="col-md-12">
-                                                <div>
-                                                    <button class="col-md-6 invisible" onclick="cleanFunction()"
-                                                        id="butClean" title="Clean filters">Clean
-                                                    </button>
+                                                <select name="category" id="catIn" style="width:10rem;">
+                                                    <option value="all">All Categories</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div>
+                                            <strong class="col-md-3">COUNTRY</strong>
+                                        </div>
+
+                                        <div>
+                                            <div class="col-md-12">
+                                                <select name="region" id="regIn" style="width:10rem;">
+                                                    <option value="all">All Countries</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div>
+                                            <strong class="col-md-3">SOURCE</strong>
+                                        </div>
+                                        <div>
+                                            <div class="col-md-12">
+                                                <select name="source" id="soIn" style="width:10rem;">
+                                                    <option value="all">All Sources</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div>
+                                            <strong class="col-md-3">ORIGIN</strong>
+                                        </div>
+                                        <div>
+                                            <div class="col-md-12">
+                                                <select name="origin" id="orIn" style="width:10rem;">
+                                                    <option value="all">All Origins</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div>
+                                            <strong class="col-md-3">YEAR</strong>
+                                        </div>
+
+                                        <div>
+                                            <div class="col-md-12">
+                                                <select name="year" id="yeIn" style="width:10rem;">
+                                                    <option value="all">All Years</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div>
+                                            <strong class="col-md-3">METHOD</strong>
+                                        </div>
+
+                                        <div>
+                                            <div class="col-md-12">
+                                                <select name="method" id="metIn" style="width:10rem;">
+                                                    <option value="all">All Methods</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div>
+                                            <div>
+                                                <strong class="col-md-3">UNIT TYPE</strong>
+                                            </div>
+                                            <div>
+                                                <div class="col-md-12">
+                                                    <select name="unit" id="unIn" style="width:10rem;">
+
+                                                        <option value="all">All Units</option>
+                                                    </select>
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </div> <br>
+
+                                    <br>
+                                    <!-- Clean filters -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div>
+                                                <button class="col-md-6 invisible" onclick="cleanFunction()"
+                                                    id="butClean" title="Clean filters">Clean
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <br>
+
                     </div>
                     <div class="col-xl-10" id="sideBarAcc">
                         <div id="titles" class="invisible size">
@@ -330,9 +351,10 @@
                                             CATEGORY
                                         </h2>
                                         <h2 class="col noMargin" style="padding-right: 0.5rem; padding-left: 0rem;">
-                                            REGION
+                                            COUNTRY
                                         </h2>
-                                        <h2 class="col noMargin" style="padding-right: 2rem; padding-left: 0rem;">SOURCE
+                                        <h2 class="col noMargin" style="padding-right: 2rem; padding-left: 0rem;">
+                                            SOURCE
                                         </h2>
                                     </div>
                                 </div>
@@ -349,8 +371,8 @@
         </div>
 
         <div class="footerInfo">
-            <div>© Code Academy Berlin 2022</div>
-            <div>Alberto Carrillo</div>
+            <div><strong>© Code Academy Berlin 2022</strong> </div>
+            <div><strong>Alberto Carrillo</strong> </div>
         </div>
         <!--       <div>
             <div>
