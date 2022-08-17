@@ -1,17 +1,9 @@
 /* /// To Dos
 .Acs.desc emmissions 
 .Deploy
-.filter padding pequeña
-.Style - MIERCOLES
-    limpiar classes
-.more pages - miercoless
+.Fetch more pages
+*/
 
-//// */
-
-
-////// popover bootstrap
-// const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-// const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.filterEmissionsPopover(popoverTriggerEl))
 
 
 // ///// FETCH DATA
@@ -27,9 +19,6 @@
 //   headers: myHeaders,
 //   redirect: 'follow'
 // };
-
-
-    
      
 // try {  
 //     fetch(urlOne, requestOptions)
@@ -54,9 +43,11 @@
 
     //const accTitles = document.getElementById("titles");
     //accTitles.classList.add("invisible")
-
+///POPOVERS 
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+
 
 ////////////////// Geolocation
 function getLocation() {
@@ -87,8 +78,12 @@ const fetchDataGeo = async (countryCode) => {
 
 let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1&region=${countryCode}`;
 let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2&region=${countryCode}`; 
+let urlThree = `https://beta3.api.climatiq.io/search?results_per_page=100&page=3&region=${countryCode}`; 
+let urlfour = `https://beta3.api.climatiq.io/search?results_per_page=100&page=4&region=${countryCode}`; 
+let urlfive = `https://beta3.api.climatiq.io/search?results_per_page=100&page=5&region=${countryCode}`; 
+let urlsix = `https://beta3.api.climatiq.io/search?results_per_page=100&page=6&region=${countryCode}`; 
 
-    let urls = [urlOne, urlTwo];
+    let urls = [urlOne, urlTwo, urlThree, urlfour, urlfive, urlsix];
 var myHeaders = new Headers();
 myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
 
@@ -106,8 +101,13 @@ var requestOptions = {
             return response;
         })); 
         const resultOne = await responses[0].json();
-        const resultTwo = await responses[1].json();
-        const allData = [...resultOne.results, ...resultTwo.results]
+         const resultTwo = await responses[1].json();
+         const resultThree = await responses[2].json();
+         const resultFour = await responses[3].json();
+         const resulFive = await responses[4].json();
+         const resultSix = await responses[5].json();
+         const allData = [...resultOne.results, ...resultTwo.results, ...resultThree.results, ...resultFour.results, ...resulFive.results, ...resultSix.results]
+        
         createAcc(allData)
         
      } catch (error) {
@@ -121,9 +121,57 @@ var requestOptions = {
 const fetchData = async (data) => {
 
 let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1`;
-let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2`; 
+    let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2`; 
+    let urlThree = `https://beta3.api.climatiq.io/search?results_per_page=100&page=3`; 
+    let urlFour = `https://beta3.api.climatiq.io/search?results_per_page=100&page=4`; 
+    let urlFive = `https://beta3.api.climatiq.io/search?results_per_page=100&page=5`; 
+    let urlSix = `https://beta3.api.climatiq.io/search?results_per_page=100&page=6`; 
+    let urlSeven = `https://beta3.api.climatiq.io/search?results_per_page=100&page=7`; 
+    let urlEight = `https://beta3.api.climatiq.io/search?results_per_page=100&page=8`; 
+    let urlNine = `https://beta3.api.climatiq.io/search?results_per_page=100&page=9`; 
+    let urlTen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=10`; 
+     let urlEleven = `https://beta3.api.climatiq.io/search?results_per_page=100&page=11`; 
+    let urlTwelve = `https://beta3.api.climatiq.io/search?results_per_page=100&page=12`; 
+    let urlThirteen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=13`; 
+    let urlFourteen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=14`; 
+    let urlFifteen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=15`; 
+    let urlSixteen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=16`; 
+    let urlSeventeen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=17`; 
+    let urlEighteen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=18`; 
+    let urlNineteen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=19`; 
+    let urlTwenty = `https://beta3.api.climatiq.io/search?results_per_page=100&page=20`; 
+    let urlTwone = `https://beta3.api.climatiq.io/search?results_per_page=100&page=21`; 
+    let urlTwtwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=22`; 
+    let urlTwthree = `https://beta3.api.climatiq.io/search?results_per_page=100&page=23`; 
+    let urlTwfour = `https://beta3.api.climatiq.io/search?results_per_page=100&page=24`; 
+    let urlTwfive = `https://beta3.api.climatiq.io/search?results_per_page=100&page=25`; 
+    let urlTwsix = `https://beta3.api.climatiq.io/search?results_per_page=100&page=26`; 
+    let urlTwseven = `https://beta3.api.climatiq.io/search?results_per_page=100&page=27`; 
+    let urlTweight = `https://beta3.api.climatiq.io/search?results_per_page=100&page=28`; 
+    let urlTwnine = `https://beta3.api.climatiq.io/search?results_per_page=100&page=29`; 
+    let urlThirty = `https://beta3.api.climatiq.io/search?results_per_page=100&page=30`; 
+    let urlThone = `https://beta3.api.climatiq.io/search?results_per_page=100&page=31`; 
+    let urlThtwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=32`; 
+    let urlThthree = `https://beta3.api.climatiq.io/search?results_per_page=100&page=33`; 
+    let urlThfour = `https://beta3.api.climatiq.io/search?results_per_page=100&page=34`; 
+    let urlThfive = `https://beta3.api.climatiq.io/search?results_per_page=100&page=35`; 
+    let urlThsix = `https://beta3.api.climatiq.io/search?results_per_page=100&page=36`; 
+    let urlThseven = `https://beta3.api.climatiq.io/search?results_per_page=100&page=37`; 
+    let urlTheight = `https://beta3.api.climatiq.io/search?results_per_page=100&page=38`; 
+    let urlThnine = `https://beta3.api.climatiq.io/search?results_per_page=100&page=39`; 
+    let urlForty = `https://beta3.api.climatiq.io/search?results_per_page=100&page=40`; 
+    let urlFoone = `https://beta3.api.climatiq.io/search?results_per_page=100&page=41`; 
+    let urlFotwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=42`; 
+    let urlFothree = `https://beta3.api.climatiq.io/search?results_per_page=100&page=43`; 
+    let urlFofour = `https://beta3.api.climatiq.io/search?results_per_page=100&page=44`; 
+    let urlFofive = `https://beta3.api.climatiq.io/search?results_per_page=100&page=45`; 
+    let urlFosix = `https://beta3.api.climatiq.io/search?results_per_page=100&page=46`; 
+    let urlFoseven = `https://beta3.api.climatiq.io/search?results_per_page=100&page=47`; 
+    let urlFoeight = `https://beta3.api.climatiq.io/search?results_per_page=100&page=48`; 
+    let urlFonine = `https://beta3.api.climatiq.io/search?results_per_page=100&page=49`; 
+    let urlFifty = `https://beta3.api.climatiq.io/search?results_per_page=100&page=50`; 
     
-let urls = [urlOne,urlTwo]
+let urls = [urlOne,urlTwo, urlThree, urlFour, urlFive, urlSix, urlSeven, urlEight, urlNine, urlTen, urlEleven, urlTwelve, urlThirteen, urlFourteen, urlFifteen, urlSixteen, urlSeventeen, urlEighteen, urlNineteen, urlTwenty, urlTwone, urlTwtwo, urlTwthree, urlTwfour, urlTwfive, urlTwsix, urlTwseven, urlTweight, urlTwnine, urlThirty, urlThone, urlThtwo, urlThthree, urlThfour, urlThfive, urlThsix, urlThseven, urlTheight, urlThnine, urlForty, urlFoone, urlFotwo, urlFothree, urlFofour, urlFofive, urlFosix,urlFoseven, urlFoeight,urlFonine, urlFifty]
 var myHeaders = new Headers();
 myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
 
@@ -133,7 +181,6 @@ var requestOptions = {
   redirect: 'follow'
 };
   
-
      try {
          const responses = await Promise.all(urls.map((url) => {
             
@@ -142,8 +189,57 @@ var requestOptions = {
             return response;
         })); 
         const resultOne = await responses[0].json();
-        const resultTwo = await responses[1].json();
-         const allData = [...resultOne.results, ...resultTwo.results]
+         const resultTwo = await responses[1].json();
+         const resultThree = await responses[2].json();
+         const resultFour = await responses[3].json();
+         const resultFive = await responses[4].json();
+         const resultSix = await responses[5].json();
+         const resultSeven = await responses[6].json();
+         const resultEight = await responses[7].json();
+         const resultNine = await responses[8].json();
+          const resultTen = await responses[9].json();
+         const resultEleven = await responses[10].json();
+         const resultTwelve = await responses[11].json();
+         const resultThirteen = await responses[12].json();
+         const resultFourteen = await responses[13].json();
+         const resultFifteen = await responses[14].json();
+         const resultSixteen = await responses[15].json();
+          const resultSeventeen = await responses[16].json();
+         const resultEighteen = await responses[17].json();
+         const resultNineteen = await responses[18].json();
+         const resultTwenty = await responses[19].json();
+         const resultTwone = await responses[20].json();
+         const resultTwtwo = await responses[21].json();
+         const resultTwthree = await responses[22].json();
+          const resultTwfour = await responses[23].json();
+         const resultTwfive = await responses[24].json();
+         const resultTwsix = await responses[25].json();
+         const resultTwseven = await responses[26].json();
+         const resultTweight = await responses[27].json();
+         const resultTwnine = await responses[28].json();
+         const resultThirty = await responses[29].json();
+          const resultThone = await responses[30].json();
+         const resultThtwo = await responses[31].json();
+         const resultThthree = await responses[32].json();
+         const resultThfour = await responses[33].json();
+         const resultThfive = await responses[34].json();
+         const resultThsix = await responses[35].json();
+         const resultThseven = await responses[36].json();
+         const resultTheight = await responses[37].json();
+         const resultThnine = await responses[38].json();
+          const resultForty = await responses[39].json();
+         const resultFoone = await responses[40].json();
+         const resultFotwo = await responses[41].json();
+         const resultFothree = await responses[42].json();
+         const resultFofour = await responses[43].json();
+         const resultFofive = await responses[44].json();
+         const resultFosix = await responses[45].json();
+         const resultFoseven = await responses[46].json();
+         const resultFoeight = await responses[47].json();
+          const resultFonine = await responses[48].json();
+         const resultFifty = await responses[49].json();
+                     
+         const allData = [...resultOne.results, ...resultTwo.results, ...resultThree.results, ...resultFour.results, ...resultFive.results, ...resultSix.results, ...resultSeven.results, ...resultEight.results, ...resultNine.results, ...resultTen.results, ...resultEleven.results, ...resultTwelve.results, ...resultThirteen.results, ...resultFourteen.results, ...resultFifteen.results, ...resultSixteen.results, ...resultSeventeen.results, ...resultEighteen.results, ...resultNineteen.results, ...resultTwenty.results, ...resultTwone.results, ...resultTwtwo.results, ...resultTwthree.results, ...resultTwfour.results, ...resultTwfive.results, ...resultTwsix.results, ...resultTwseven.results, ...resultTweight.results, ...resultTwnine.results, ...resultThirty.results,...resultThone.results, ...resultThtwo.results, ...resultThthree.results, ...resultThfour.results, ...resultThfive.results, ...resultThsix.results, ...resultThseven.results, ...resultTheight.results, ...resultThnine.results, ...resultForty.results, ...resultFoone.results, ...resultFotwo.results, ...resultFothree.results, ...resultFofour.results, ...resultFofive.results, ...resultFosix.results, ...resultFoseven.results, ...resultFoeight.results, ...resultFonine.results, ...resultFifty.results]
         
          myController(allData)
         
@@ -181,16 +277,13 @@ var requestOptions = {
         const resultTwo = await responses[1].json();
          const allData = [...resultOne.results, ...resultTwo.results]
         
-         createAcc(allData)
+         myController(allData)
         
      } catch (error) {
          console.log('error :>> ', error);
     } 
     
 }; 
-
-
-
     
 /* function fetchData() {
     fetch(url, requestOptions)
@@ -215,6 +308,8 @@ const createAcc = (data) => {
     spinner.classList.add("invisible");
     const butClean = document.getElementById("butClean");
     butClean.classList.remove("invisible");
+/*     const butOrder = document.getElementById("butOrder");
+    butOrder.classList.remove("invisible"); */
     const butDone = document.getElementById("butDone");
     butDone.classList.remove("invisible");
     const accTitles = document.getElementById("titles");
@@ -222,46 +317,44 @@ const createAcc = (data) => {
  
     for (let i = 0; i < data.length; i++) {
     let divAcItem = document.createElement("div")
-    divAcItem.setAttribute("class", "accordion-item containers")
+    divAcItem.setAttribute("class", " shadow-sm  accordion-item containers")
     divAcItem.setAttribute("style", "background-color: rgb(221, 221, 221);")
    
     
     let h2Ac = document.createElement("div")
     h2Ac.setAttribute("id", "flush-headingOne")
-    h2Ac.setAttribute("class", "accordion-header ")
-     h2Ac.setAttribute("style", "background-color: rgb(221, 221, 221) !important;")
+    h2Ac.setAttribute("class", " accordion-header ")
+    h2Ac.setAttribute("style", "background-color: rgb(221, 221, 221) !important;")
  
 
     let button = document.createElement("button")
-    button.setAttribute("class", "text-start accordion-button collapsed row")
+    button.setAttribute("class", " text-start accordion-button collapsed row")
     button.setAttribute("type", "button")
     button.setAttribute("data-bs-toggle", "collapse")
     button.setAttribute("data-bs-target", "#flush-collapseOne"+i)
     button.setAttribute("aria-expanded", "true")
     button.setAttribute("aria-controls", "flush-collapseOne")
     button.setAttribute("id", "noMargin")
-    button.setAttribute("style", "background-color: white !important; color: black;")
+    button.setAttribute("style", "background-color: white !important; color: black; padding:8px;  box-shadow: black !important;")
        
-        
-  
     let divName = document.createElement("div")
-    divName.setAttribute("class", "col-md-3")
+    divName.setAttribute("class", "col-md-3 nameSize")
     divName.setAttribute("style","word-wrap: break-word")
     divName.innerHTML = data[i].name 
 
     let divCat = document.createElement("div")
-    divCat.setAttribute("class", "col-md-3")
+    divCat.setAttribute("class", "col-md-3 infoSize")
     divCat.setAttribute("style","word-wrap: break-word")
   
     divCat.innerHTML = data[i].category
 
     let divReg = document.createElement("div")
-        divReg.setAttribute("class", "col-md-3")
+        divReg.setAttribute("class", "col-md-3 infoSize")
         divReg.setAttribute("style","word-wrap: break-word")
     divReg.innerHTML = data[i].region_name
 
     let divSource = document.createElement("a")
-        divSource.setAttribute("class", "col-md-3")
+        divSource.setAttribute("class", "col-md-3 sourceSize")
         divSource.setAttribute("href", `${data[i].source_link}`)
     divSource.innerHTML = data[i].source
     
@@ -269,10 +362,9 @@ const createAcc = (data) => {
     let divCollpse = document.createElement("div")
     divCollpse.setAttribute("id", "flush-collapseOne"+i)
     divCollpse.setAttribute("class", "accordion-collapse collapse container text-start")
-        divCollpse.setAttribute("aria-labelledby", "flush-headingOne")
-        divCollpse.setAttribute("data-bs-parent", "#accordionFlushExample")
+    divCollpse.setAttribute("aria-labelledby", "flush-headingOne")
+    divCollpse.setAttribute("data-bs-parent", "#accordionFlushExample")
     
-
     let divAcBody = document.createElement("div")
         divAcBody.setAttribute("class", "accordion-body row")
 
@@ -322,8 +414,7 @@ const createAcc = (data) => {
     divAcItem.appendChild(h2Ac)
     divAcItem.appendChild(divCollpse)
         divAccordion.appendChild(divAcItem)   
-        
-        
+     
 }
 }
 
@@ -451,9 +542,6 @@ const createDropdownUn = (liveData) => {
 
 
 //// EVENTS////////////////////////////////////////////
-
-
-
 /// NAME
 const setEventlisteners = (data) => {
     
@@ -550,8 +638,6 @@ const setEventlistenersUn = (data) => {
 
 
 //// filter dropdowns////////////////////////////////////////////
-
-
 ////FILTERS DROPDOWN
 
 const filterDropdown = (data) => {
@@ -602,14 +688,14 @@ butClean.addEventListener('click', () => {
 
 //////// ORDER
 ////EVENT 
-const setEventlistenersOrder = (data) => { 
+/* const setEventlistenersOrder = (data) => { 
     document.querySelector("#butOrder").addEventListener("change", (event) => {
         let orderValue = ""
         console.log(event.target.value);
         orderValue = event.target.value
         filterOrder(data); 
     });
-} 
+}  */
 
 
 /* const setEventlistenersOr = (data) => {
@@ -623,7 +709,7 @@ const setEventlistenersOrder = (data) => {
 
 
 ///// filter ORDER
-const filterOrder = (data) => {
+/* const filterOrder = (data) => {
     const dropDownValueOrder = document.querySelector("#butOrder").index;   
     let order = ""
     order.forEach(data => {data.factor.sort((a, b) => a - b)  
@@ -638,7 +724,7 @@ const filterOrder = (data) => {
       //  console.log('works');
     //});
    
-}; 
+};  */
 
 /* const filterDropdownCat = (data) => {
     const dropDownValue = document.querySelector("#catIn").value; 
@@ -684,40 +770,32 @@ butClean.addEventListener('click', () => {
 }); 
  */
 
-
-
-
-
-
-
-
 /////// FUNCTION CONTROLLER ////////////////////////////////////////////
 function myController(data) {
-    searchEvent();
-    fetchDataGeo();
-     //createAcc(data);
-    getLocation();
-    setEventlistenersOrder(data);
+   
+    getLocation(data);
+    fetchDataGeo(data);
+    searchEvent(data);
+ //   setEventlistenersOrder(data);
   //  filterOrder (data);
     createDropdown(data);
     setEventlisteners(data);
     createDropdownReg(data);
     setEventlistenersReg(data);
-createDropdownCat(data);
+    createDropdownCat(data);
     setEventlistenersCat(data);
-createDropdownSo(data);
+    createDropdownSo(data);
     setEventlistenersSo(data);
-createDropdownOr(data);
+    createDropdownOr(data);
     setEventlistenersOr(data);
-createDropdownYe(data);
+    createDropdownYe(data);
     setEventlistenersYe(data);
-createDropdownMet(data);
+    createDropdownMet(data);
     setEventlistenersMet(data);
     createDropdownUn(data);
     setEventlistenersUn(data);
     
 };
-
 
 fetchData()
  

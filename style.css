@@ -4,28 +4,20 @@
     background-color: rgb(221, 221, 221);
 }
 
-/* POSITIONING */
-
-.positioning {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-}
-
 #align {
     text-align: center;
 
 }
 
 #noMargin {
-    margin: 0% !important;
+    margin: 0% !important; 
+ 
 
 }
 
 .noMargin {
     margin: 0%;
-    background-color: white;
+    background-color: white; 
 
 
 }
@@ -46,17 +38,41 @@
 
 }
 
+.positioning {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+
 /* HEADER */
+
+.gitHub{
+    padding-top: 1em;
+    height: 55px;
+}
+
+.linkedin {
+    padding-top: 1em;
+    height: 60px;
+}
+
 
 .headr {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 0.5rem;
 }
 
 .itemHeadr {
-    padding-right: 2rem;
+    padding-right: 1rem;
+}
+
+.itemHeadrClimatiq{
+font-size: 12px;
+padding-left: 1rem;
 }
 
 /* HEADING */
@@ -76,29 +92,6 @@ h2{
     color:
         black;
     font: sans-serif;
-}
-
-@media only screen and (max-width: 1000px) {
-    h2 {
-        font-size: 0px !important;
-   
-        
-    }
-
-    #heading {font-size: 80px !important;
-}
-
- #buttonLearn {
-     width: 10rem !important;
-     height: 3rem !important;
-     font-size: 20px !important;
-    
- }
-
- #divSearchBar {
-     width: 20rem !important;
- }
-
 }
 
 
@@ -133,6 +126,10 @@ color: black !important;
     color: white !important;
 }
 
+.modalDiv{
+    column-gap: 2rem;
+}
+
 
 /* Search Bar */
 
@@ -158,9 +155,20 @@ color: black !important;
     background-color: rgb(221, 221, 221);
 
 
+
  }
 
 
+ .selectFilter{
+    width: 13rem !important;
+    border-radius: 0.3rem !important;
+ }
+
+  .selectFilter:hover {
+     background-color: black;
+     color: white;
+      border-radius: 0.3rem !important;
+  }
 
 
  /* BUTTONS */
@@ -181,7 +189,7 @@ color: black !important;
 
 
  #buttonFilter{
-     padding-right: 3rem;
+    padding-right: 1rem;
     padding-top: 0;
     height: 4rem;
     font-size: 50px;
@@ -207,25 +215,60 @@ color: black !important;
        background-color: white!important;
     color: black;
     border-radius: 0.3rem !important;
+    width: auto;
+    padding: 0%;
+    
+
+   
    }
 
    #butClean:hover {
     background-color: black !important;
-        color: white;
+        color: white; 
    }
 
-#butDone {
-    background-color: rgb(0, 0, 190) !important;
-    color: white;
-    
+
+#butDone{
+    background-color: white !important;
+    color: black;
+    border-radius: 0.3rem !important;
+    width: auto;
 }
 
-  #butDone:hover {
-        background-color: white !important;
+#refreshIcon{
+    font-size: 2rem;
+}
+
+#butOrder{
+    background-color: white !important;
         color: black;
-  
-  }
-   
+        border-radius: 0.3rem !important;
+        width: auto;
+
+}
+
+#butOrder:hover {
+    background-color: black !important;
+        color: white;
+}
+
+#iconOrder{
+    font-size: 2rem;
+}
+
+#doneIcon {
+    font-size: 3rem;
+}
+
+
+#butDone:hover {
+    background-color: black !important;
+    color: black;
+    border-radius: 0.3rem !important;
+    width: auto;
+
+}
+
 
 
 
@@ -242,11 +285,47 @@ color: white;
 
 /* ACCORDION */
 
- #sideBarAcc {
-     padding-right: 0%;
+ .nameSize {
+     font-size: 20px;
+ }
 
+ .infoSize {
+     font-size: 20px;
+ }
+
+ .sourceSize {
+     font-size: 20px;
+ }
+
+ #sideBarAcc {
+    border-top: 10rem !important;
+     padding-right: 0%;
+     background-color: rgb(221, 221, 221);
+     
 
  }
+
+ .titlesLine{
+    opacity: 12;
+ }
+
+ .activityTitle{
+    padding-right: 0% ;
+    padding-left: 2rem !important;
+ }
+
+  .categoryTitle {
+    padding-right: 0%;
+     padding-left: 0.5rem !important;
+  }
+   .countryTitle {
+padding-right: 0.5rem !important;
+    padding-left: 0rem !important;
+   }
+     .sourceTitle {
+        padding-right: 2rem !important;
+            padding-left: 0rem;
+        }
 
 
 /* FOOTER */
@@ -312,11 +391,13 @@ color: white;
 
 #titles{
     padding-top: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0%;
    
 }
 
-
+hr{
+    margin-bottom: 0% !important;
+}
 
 /* GOOGLE FONTS */
 
@@ -326,4 +407,56 @@ color: white;
         'wght' 400,
         'GRAD' 0,
         'opsz' 48
+}
+
+/* MEDIA QUERY */
+
+@media only screen and (max-width: 1000px) {
+    h2 {
+        font-size: 0px !important;
+    }
+
+    #accordionFlushExample {
+        font-size: 20px;
+    }
+
+    .nameSize {
+        font-size: 25px;
+    }
+
+    .infoSize {
+        font-size: 18px;
+    }
+
+    .sourceSize {
+        font-size: 12px;
+    }
+
+    .titlesLine {
+        border: 0;
+    }
+
+    #heading {
+        font-size: 80px !important;
+    }
+
+    #buttonLearn {
+        width: 10rem !important;
+        height: 3rem !important;
+        font-size: 20px !important;
+
+    }
+
+    #divSearchBar {
+        width: 20rem !important;
+    }
+
+    #titles{
+        padding:0%
+    }
+
+    #accordionFlushExample{
+        padding:0.3rem !important;
+    }
+
 }

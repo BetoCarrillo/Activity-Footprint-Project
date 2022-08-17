@@ -23,20 +23,26 @@
             <!-- Header -->
             <div class="headr">
                 <div>
+                    <div class="itemHeadrClimatiq"> Powered by <br> <a href="https://www.climatiq.io/"
+                            target="_blank"><img src="./Images/Climatiq.png" alt="Climatiq" height="50rem"></a>
+                    </div>
+                </div>
+                <div>
+
                     <a href="https://github.com/BetoCarrillo">
-                        <img src="./Images/GitHub-Mark-64px.png" alt="GitHubProfile" height="55px"
-                            style="padding-top:1.2em;" class="logo shake">
+                        <img src="./Images/GitHub-Mark-64px.png" alt="GitHubProfile" class="gitHub logo shake">
                     </a>
-                </div>
-                <div class="itemHeadr">
+
+
                     <a href="https://www.linkedin.com/in/alberto-carrillo-ch/" target="_blank">
-                        <img src="./Images/icons8-linkedin-circled-60.png" alt="LinkedinProfile" height="60px"
-                            style="padding-top:0.9em;" class="logo shake">
+                        <img src="./Images/icons8-linkedin-circled-60.png" alt="LinkedinProfile"
+                            class="linkedin logo shake itemHeadr">
                     </a>
+
                 </div>
+
+
             </div>
-
-
 
             <div>
                 <!--   HEADING  -->
@@ -84,7 +90,7 @@
 
                                     <br>
                                 </p>
-                                <div class="row justify-content-md-center" style="column-gap: 2rem;">
+                                <div class="row justify-content-md-center modalDiv">
                                     <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2 "
                                         data-bs-toggle="popover" title="Activity" data-bs-content="Activity's name"
                                         id="modalItem">Activity</a>
@@ -97,7 +103,7 @@
                                         id="modalItem">
                                         Country</a>
                                 </div>
-                                <div class="row justify-content-md-center" style="column-gap: 2rem;">
+                                <div class="row justify-content-md-center modalDiv">
                                     <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
                                         data-bs-toggle="popover" title="Source"
                                         data-bs-content="Emission factor publisher." id="modalItem">Source</a>
@@ -110,7 +116,7 @@
                                         data-bs-content="Year for which the emission factor applies."
                                         id="modalItem">Year</a>
                                 </div>
-                                <div class="row justify-content-md-center" style="column-gap: 2rem;">
+                                <div class="row justify-content-md-center modalDiv">
                                     <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
                                         data-bs-toggle="popover" title="Calculation Method"
                                         data-bs-content="Indicates which conversion values were used (IPCC 4th or 5th Assessment Report) to generate the returned CO2e emission factor."
@@ -154,15 +160,7 @@
                         id="searchBar">
                 </div>
             </div>
-            <div>
-                <!-- DISPLAY BUTTON -->
-                <div>
-                    <select name="display" id="butOrder" style="width:5rem; border: none;">
-                        <option value="ascending">Ascending</option>
-                        <option value="descending">Descending</option>
-                    </select>
-                </div>
-            </div>
+
         </div>
         <div>
             <div>
@@ -191,23 +189,12 @@
                             </div>
                             <div class="offcanvas-header">
                                 <div>
-                                    <div class="text-center">
-                                        <span class=" btn-primary d-lg-none material-symbols-outlined" id="buttonFilter"
-                                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"
-                                            aria-controls="offcanvasResponsive">
+
+                                    <button class="invisible" data-bs-dismiss="offcanvas"
+                                        data-bs-target="#offcanvasResponsive" id="butDone">
+                                        <span class="material-symbols-outlined" id="doneIcon">
                                             tune
-                                        </span>
-
-
-
-                                        <button class="invisible" data-bs-dismiss="offcanvas"
-                                            data-bs-target="#offcanvasResponsive" id="butDone">
-                                            <span class="material-symbols-outlined">
-                                                tune
-                                            </span></button>
-                                    </div>
-
-                                    <br>
+                                        </span></button>
                                 </div>
                             </div>
                             <div class="offcanvas-body" style="justify-content:center;">
@@ -218,7 +205,7 @@
                                         </div>
                                         <div>
                                             <div class="col-lg-12">
-                                                <select name="Activity select" id="nameIn" style="width:10rem;">
+                                                <select name="Activity" id="nameIn" class="selectFilter">
                                                     <option value="all">All Activities</option>
                                                 </select>
                                             </div>
@@ -231,7 +218,7 @@
                                         </div>
                                         <div>
                                             <div class="col-md-12">
-                                                <select name="category" id="catIn" style="width:10rem;">
+                                                <select name="category" id="catIn" class="selectFilter">
                                                     <option value="all">All Categories</option>
                                                 </select>
                                             </div>
@@ -245,7 +232,7 @@
 
                                         <div>
                                             <div class="col-md-12">
-                                                <select name="region" id="regIn" style="width:10rem;">
+                                                <select name="region" id="regIn" class="selectFilter">
                                                     <option value="all">All Countries</option>
                                                 </select>
                                             </div>
@@ -258,7 +245,7 @@
                                         </div>
                                         <div>
                                             <div class="col-md-12">
-                                                <select name="source" id="soIn" style="width:10rem;">
+                                                <select name="source" id="soIn" class="selectFilter">
                                                     <option value="all">All Sources</option>
                                                 </select>
                                             </div>
@@ -271,7 +258,7 @@
                                         </div>
                                         <div>
                                             <div class="col-md-12">
-                                                <select name="origin" id="orIn" style="width:10rem;">
+                                                <select name="origin" id="orIn" class="selectFilter">
                                                     <option value="all">All Origins</option>
                                                 </select>
                                             </div>
@@ -285,7 +272,7 @@
 
                                         <div>
                                             <div class="col-md-12">
-                                                <select name="year" id="yeIn" style="width:10rem;">
+                                                <select name="year" id="yeIn" class="selectFilter">
                                                     <option value="all">All Years</option>
                                                 </select>
                                             </div>
@@ -299,7 +286,7 @@
 
                                         <div>
                                             <div class="col-md-12">
-                                                <select name="method" id="metIn" style="width:10rem;">
+                                                <select name="method" id="metIn" class="selectFilter">
                                                     <option value="all">All Methods</option>
                                                 </select>
                                             </div>
@@ -313,7 +300,7 @@
                                             </div>
                                             <div>
                                                 <div class="col-md-12">
-                                                    <select name="unit" id="unIn" style="width:10rem;">
+                                                    <select name="unit" id="unIn" class="selectFilter">
 
                                                         <option value="all">All Units</option>
                                                     </select>
@@ -322,15 +309,26 @@
                                         </div>
                                     </div> <br>
 
-                                    <br>
                                     <!-- Clean filters -->
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div>
-                                                <button class="col-md-6 invisible" onclick="cleanFunction()"
-                                                    id="butClean" title="Clean filters">Clean
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <button class="invisible" onclick="cleanFunction()" id="butClean"
+                                                    title="Clean filters"><span class="material-symbols-outlined"
+                                                        id="refreshIcon">
+                                                        refresh
+                                                    </span>
                                                 </button>
                                             </div>
+                                            <!-- DISPLAY BUTTON -->
+                                            <!--       <div class="col-md-3">
+                                                <button class="invisible" onclick="orderFunction()" id="butOrder"
+                                                    title="Clean filters"><span class="material-symbols-outlined"
+                                                        id="iconOrder">
+                                                        reorder
+                                                    </span>
+                                                </button>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -338,29 +336,32 @@
                         </div>
 
                     </div>
-                    <div class="col-xl-10" id="sideBarAcc">
+                    <div class="col-xl-10 " id="sideBarAcc">
                         <div id="titles" class="invisible size">
                             <div>
                                 <!--   Accordion  -->
-                                <div class="text-start">
-                                    <div class="row accordion-item">
-                                        <h2 class="col noMargin" style="padding-right: 0%; padding-left: 2rem;">
+                                <div class="text-start ">
+                                    <div class="row accordion-item shadow p-3 ">
+                                        <h2 class="col noMargin activityTitle shadow ">
                                             ACTIVITY
                                         </h2>
-                                        <h2 class="col noMargin" style="padding-right: 0%; padding-left: 0.5rem;">
+                                        <h2 class="col noMargin categoryTitle">
                                             CATEGORY
                                         </h2>
-                                        <h2 class="col noMargin" style="padding-right: 0.5rem; padding-left: 0rem;">
+                                        <h2 class="col noMargin countryTitle ">
                                             COUNTRY
                                         </h2>
-                                        <h2 class="col noMargin" style="padding-right: 2rem; padding-left: 0rem;">
+                                        <h2 class="col noMargin sourceTitle">
                                             SOURCE
                                         </h2>
                                     </div>
+                                    <hr class="titlesLine">
                                 </div>
                             </div>
                         </div>
-                        <div class=" accordion accordion-flush size" id="accordionFlushExample">
+                        <div>
+                            <div class=" accordion accordion-flush size" id="accordionFlushExample">
+                            </div>
                         </div>
 
                     </div>
@@ -371,7 +372,7 @@
         </div>
 
         <div class="footerInfo">
-            <div><strong>© Code Academy Berlin 2022</strong> </div>
+            <div><strong>Code Academy Berlin 2022</strong> </div>
             <div><strong>Alberto Carrillo</strong> </div>
         </div>
         <!--       <div>
