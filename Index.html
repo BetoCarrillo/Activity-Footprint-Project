@@ -27,18 +27,12 @@
                             target="_blank"><img src="./Images/Climatiq.png" alt="Climatiq" height="50rem"></a>
                     </div>
                 </div>
-                <div>
-
-                    <a href="https://github.com/BetoCarrillo">
-                        <img src="./Images/GitHub-Mark-64px.png" alt="GitHubProfile" class="gitHub logo shake">
-                    </a>
-
+                <div><a href="https://github.com/BetoCarrillo">
+                        <img src="./Images/GitHub-Mark-64px.png" alt="GitHubProfile" class="gitHub logo shake"></a>
 
                     <a href="https://www.linkedin.com/in/alberto-carrillo-ch/" target="_blank">
                         <img src="./Images/icons8-linkedin-circled-60.png" alt="LinkedinProfile"
-                            class="linkedin logo shake itemHeadr">
-                    </a>
-
+                            class="linkedin logo shake itemHeadr"></a>
                 </div>
 
 
@@ -163,165 +157,165 @@
 
         </div>
         <div>
-            <div>
-                <div class="row" id="noMargin">
-                    <!-- SIDEBAR  -->
-                    <div class="col-xl-2" id="sideBarPad">
-                        <div class="text-center">
-                            <button id="spinner" class="btn btn-primary col-lg-auto" type="button" disabled>
-                                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                Choose filters..
-                            </button>
+
+            <div class="row" id="noMargin">
+                <!-- SIDEBAR  -->
+                <div class="col-xl-2" id="sideBarPad">
+                    <div class="text-start">
+                        <button id="spinner" class="btn btn-primary col-lg-auto" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Choose filters..
+                        </button>
+                    </div>
+                    <div class="text-end">
+                        <span class=" btn-primary d-lg-none material-symbols-outlined" id="buttonFilter"
+                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"
+                            aria-controls="offcanvasResponsive">
+                            tune
+                        </span>
+                    </div>
+                    <div class="offcanvas-lg offcanvas-end " tabindex="-1" id="offcanvasResponsive"
+                        aria-labelledby="offcanvasResponsiveLabel">
+                        <div class="offcanvas-header ">
+                            <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Filter activities</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
                         </div>
-                        <div class="text-end">
-                            <span class=" btn-primary d-lg-none material-symbols-outlined" id="buttonFilter"
-                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"
-                                aria-controls="offcanvasResponsive">
-                                tune
-                            </span>
+                        <div class="offcanvas-header">
+                            <div>
+
+                                <button class="invisible" data-bs-dismiss="offcanvas"
+                                    data-bs-target="#offcanvasResponsive" id="butDone">
+                                    <span class="material-symbols-outlined" id="doneIcon">
+                                        tune
+                                    </span></button>
+                            </div>
                         </div>
-                        <div class="offcanvas-lg offcanvas-end " tabindex="-1" id="offcanvasResponsive"
-                            aria-labelledby="offcanvasResponsiveLabel">
-                            <div class="offcanvas-header ">
-                                <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Filter activities</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                    data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-header">
-                                <div>
-
-                                    <button class="invisible" data-bs-dismiss="offcanvas"
-                                        data-bs-target="#offcanvasResponsive" id="butDone">
-                                        <span class="material-symbols-outlined" id="doneIcon">
-                                            tune
-                                        </span></button>
-                                </div>
-                            </div>
-                            <div class="offcanvas-body" style="justify-content:center;">
-                                <div>
-                                    <div class="row" id="filterRow">
-                                        <div>
-                                            <strong class="col-lg-3 ">ACTIVITY</strong>
-                                        </div>
-                                        <div>
-                                            <div class="col-lg-12">
-                                                <select name="Activity" id="nameIn" class="selectFilter">
-                                                    <option value="all">All Activities</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div>
-                                            <strong class="col-md-3">CATEGORY</strong>
-                                        </div>
-                                        <div>
-                                            <div class="col-md-12">
-                                                <select name="category" id="catIn" class="selectFilter">
-                                                    <option value="all">All Categories</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div>
-                                            <strong class="col-md-3">COUNTRY</strong>
-                                        </div>
-
-                                        <div>
-                                            <div class="col-md-12">
-                                                <select name="region" id="regIn" class="selectFilter">
-                                                    <option value="all">All Countries</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div>
-                                            <strong class="col-md-3">SOURCE</strong>
-                                        </div>
-                                        <div>
-                                            <div class="col-md-12">
-                                                <select name="source" id="soIn" class="selectFilter">
-                                                    <option value="all">All Sources</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div>
-                                            <strong class="col-md-3">ORIGIN</strong>
-                                        </div>
-                                        <div>
-                                            <div class="col-md-12">
-                                                <select name="origin" id="orIn" class="selectFilter">
-                                                    <option value="all">All Origins</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div>
-                                            <strong class="col-md-3">YEAR</strong>
-                                        </div>
-
-                                        <div>
-                                            <div class="col-md-12">
-                                                <select name="year" id="yeIn" class="selectFilter">
-                                                    <option value="all">All Years</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div>
-                                            <strong class="col-md-3">METHOD</strong>
-                                        </div>
-
-                                        <div>
-                                            <div class="col-md-12">
-                                                <select name="method" id="metIn" class="selectFilter">
-                                                    <option value="all">All Methods</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <div>
-                                            <div>
-                                                <strong class="col-md-3">UNIT TYPE</strong>
-                                            </div>
-                                            <div>
-                                                <div class="col-md-12">
-                                                    <select name="unit" id="unIn" class="selectFilter">
-
-                                                        <option value="all">All Units</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <br>
-
-                                    <!-- Clean filters -->
+                        <div class="offcanvas-body">
+                            <div>
+                                <div class="row" id="filterRow">
                                     <div>
-                                        <div class="row">
-                                            <div class="col-md-3">
-                                                <button class="invisible" onclick="cleanFunction()" id="butClean"
-                                                    title="Clean filters"><span class="material-symbols-outlined"
-                                                        id="refreshIcon">
-                                                        refresh
-                                                    </span>
-                                                </button>
+                                        <strong class="col-lg-3 ">ACTIVITY</strong>
+                                    </div>
+                                    <div>
+                                        <div class="col-md-8">
+                                            <select name="Activity" id="nameIn" class="selectFilter">
+                                                <option value="all">All Activities</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">CATEGORY</strong>
+                                    </div>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="category" id="catIn" class="selectFilter">
+                                                <option value="all">All Categories</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">COUNTRY</strong>
+                                    </div>
+
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="region" id="regIn" class="selectFilter">
+                                                <option value="all">All Countries</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">SOURCE</strong>
+                                    </div>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="source" id="soIn" class="selectFilter">
+                                                <option value="all">All Sources</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">ORIGIN</strong>
+                                    </div>
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="origin" id="orIn" class="selectFilter">
+                                                <option value="all">All Origins</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">YEAR</strong>
+                                    </div>
+
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="year" id="yeIn" class="selectFilter">
+                                                <option value="all">All Years</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <strong class="col-md-3">METHOD</strong>
+                                    </div>
+
+                                    <div>
+                                        <div class="col-md-12">
+                                            <select name="method" id="metIn" class="selectFilter">
+                                                <option value="all">All Methods</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div>
+                                        <div>
+                                            <strong class="col-md-3">UNIT TYPE</strong>
+                                        </div>
+                                        <div>
+                                            <div class="col-md-12">
+                                                <select name="unit" id="unIn" class="selectFilter">
+
+                                                    <option value="all">All Units</option>
+                                                </select>
                                             </div>
-                                            <!-- DISPLAY BUTTON -->
-                                            <!--       <div class="col-md-3">
+                                        </div>
+                                    </div>
+                                </div> <br>
+
+                                <!-- Clean filters -->
+                                <div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <button class="invisible" onclick="cleanFunction()" id="butClean"
+                                                title="Clean filters"><span class="material-symbols-outlined"
+                                                    id="refreshIcon">
+                                                    refresh
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <!-- DISPLAY BUTTON -->
+                                        <!--       <div class="col-md-3">
                                                 <button class="invisible" onclick="orderFunction()" id="butOrder"
                                                     title="Clean filters"><span class="material-symbols-outlined"
                                                         id="iconOrder">
@@ -329,46 +323,46 @@
                                                     </span>
                                                 </button>
                                             </div> -->
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                    <div class="col-xl-10 " id="sideBarAcc">
-                        <div id="titles" class="invisible size">
-                            <div>
-                                <!--   Accordion  -->
-                                <div class="text-start ">
-                                    <div class="row accordion-item shadow p-3 ">
-                                        <h2 class="col noMargin activityTitle shadow ">
-                                            ACTIVITY
-                                        </h2>
-                                        <h2 class="col noMargin categoryTitle">
-                                            CATEGORY
-                                        </h2>
-                                        <h2 class="col noMargin countryTitle ">
-                                            COUNTRY
-                                        </h2>
-                                        <h2 class="col noMargin sourceTitle">
-                                            SOURCE
-                                        </h2>
-                                    </div>
-                                    <hr class="titlesLine">
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class=" accordion accordion-flush size" id="accordionFlushExample">
-                            </div>
-                        </div>
 
+                </div>
+                <div class="col-xl-10 " id="sideBarAcc">
+                    <div id="titles" class="invisible size">
+                        <div>
+                            <!--   Accordion  -->
+                            <div class="text-start ">
+                                <div class="row accordion-item shadow p-3 ">
+                                    <h2 class="col noMargin activityTitle shadow ">
+                                        ACTIVITY
+                                    </h2>
+                                    <h2 class="col noMargin categoryTitle">
+                                        CATEGORY
+                                    </h2>
+                                    <h2 class="col noMargin countryTitle ">
+                                        COUNTRY
+                                    </h2>
+                                    <h2 class="col noMargin sourceTitle">
+                                        SOURCE
+                                    </h2>
+                                </div>
+                                <hr class="titlesLine">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion">
+                        <div class=" accordion accordion-flush size" id="accordionFlushExample">
+                        </div>
                     </div>
 
                 </div>
 
             </div>
+
+
         </div>
 
         <div class="footerInfo">

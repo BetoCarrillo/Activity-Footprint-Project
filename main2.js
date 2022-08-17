@@ -1,6 +1,5 @@
 /* /// To Dos
 .Acs.desc emmissions 
-.Deploy
 .Fetch more pages
 */
 
@@ -106,8 +105,7 @@ var requestOptions = {
          const resultFour = await responses[3].json();
          const resulFive = await responses[4].json();
          const resultSix = await responses[5].json();
-         const allData = [...resultOne.results, ...resultTwo.results, ...resultThree.results, ...resultFour.results, ...resulFive.results, ...resultSix.results]
-        
+        const allData = [...resultOne.results, ...resultTwo.results, ...resultThree.results, ...resultFour.results, ...resulFive.results, ...resultSix.results]
         createAcc(allData)
         
      } catch (error) {
@@ -277,7 +275,7 @@ var requestOptions = {
         const resultTwo = await responses[1].json();
          const allData = [...resultOne.results, ...resultTwo.results]
         
-         myController(allData)
+         createAcc(allData)
         
      } catch (error) {
          console.log('error :>> ', error);
@@ -337,6 +335,8 @@ const createAcc = (data) => {
     button.setAttribute("id", "noMargin")
     button.setAttribute("style", "background-color: white !important; color: black; padding:8px;  box-shadow: black !important;")
        
+        
+  
     let divName = document.createElement("div")
     divName.setAttribute("class", "col-md-3 nameSize")
     divName.setAttribute("style","word-wrap: break-word")
@@ -772,10 +772,9 @@ butClean.addEventListener('click', () => {
 
 /////// FUNCTION CONTROLLER ////////////////////////////////////////////
 function myController(data) {
-   
-    getLocation(data);
-    fetchDataGeo(data);
-    searchEvent(data);
+    getLocation();
+    fetchDataGeo();
+    searchEvent();
  //   setEventlistenersOrder(data);
   //  filterOrder (data);
     createDropdown(data);
