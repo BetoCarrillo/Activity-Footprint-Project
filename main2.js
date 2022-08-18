@@ -1,5 +1,4 @@
 /* /// To Dos
-.Acs.desc emmissions 
 .Fetch more pages
 */
 
@@ -50,10 +49,11 @@ const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstra
 
 ////////////////// Geolocation
 function getLocation() {
+    const butGeo = document.getElementById("butGeo");
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getRegLocation);
-  } else {
-    alert("Geolocation not accepted")
+  } else { 
+    butGeo.innerHTML = "Geolocation is blocked"
   }
 }
 
@@ -73,7 +73,16 @@ async function getRegLocation(position) {
 }
 /////// FETCH DATA GEOLOCATION
 
+let number = 0
+const array = [44, 2, 443,"ff", "jj", 2]
+for (let i = 0; i < array.length; i++) {
+    number++;
+    console.log(number);
+}
+
 const fetchDataGeo = async (countryCode) => {
+const butGeo = document.getElementById("butGeo");
+butGeo.classList.add("invisible");
 
 let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1&region=${countryCode}`;
 let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2&region=${countryCode}`; 
@@ -106,6 +115,7 @@ var requestOptions = {
          const resulFive = await responses[4].json();
          const resultSix = await responses[5].json();
         const allData = [...resultOne.results, ...resultTwo.results, ...resultThree.results, ...resultFour.results, ...resulFive.results, ...resultSix.results]
+        myStopFunction()
         createAcc(allData)
         
      } catch (error) {
@@ -373,29 +383,29 @@ const createAcc = (data) => {
 
     let divDesc = document.createElement("div")
     divDesc.innerHTML = data[i].description
-    divDesc.setAttribute("class", "col-md-8")
+    divDesc.setAttribute("class", "col-md-8 description")
 
     let divEm = document.createElement("div")
-    divEm.innerHTML = "<b>Emission Factors: </b>" + data[i].factor
-    divEm.setAttribute("class", "col-md-12")
+    divEm.innerHTML = "<b>Footprint: </b>" + data[i].factor
+    divEm.setAttribute("class", "col-md-12 footprint")
 
     let divUn = document.createElement("div")
-    divUn.innerHTML = "<b>Unit type: </b>" + data[i].unit
-    divUn.setAttribute("class", "col-md-12")
+    divUn.innerHTML = "<b>Unit: </b>" + data[i].unit
+    divUn.setAttribute("class", "col-md-12 moreInfo")
 
     let divSOr = document.createElement("div")
     divSOr.innerHTML = "<b>Origin: </b>" + data[i].factor_calculation_origin
-    divSOr.setAttribute("class", "col-md-12")
+    divSOr.setAttribute("class", "col-md-12 moreInfo")
    
     let divYear = document.createElement("div")
     divYear.innerHTML = "<b>Year: </b>" + data[i].year
-    divYear.setAttribute("class", "col-md-12")
+    divYear.setAttribute("class", "col-md-12 moreInfo")
 
     let divCalc = document.createElement("div")
     divCalc.innerHTML =  
         "<b>Calculation Method: </b>"
     + data[i].factor_calculation_method 
-    divCalc.setAttribute("class", "col-md-12")
+    divCalc.setAttribute("class", "col-md-12 moreInfo")
 
     divAcBody.appendChild(divDesc)
     divBodyTwo.appendChild(divEm)
@@ -771,9 +781,8 @@ butClean.addEventListener('click', () => {
  */
 
 /////// FUNCTION CONTROLLER ////////////////////////////////////////////
-function myController(data) {
-    getLocation();
-    fetchDataGeo();
+function myController(data) { 
+
     searchEvent();
  //   setEventlistenersOrder(data);
   //  filterOrder (data);
@@ -796,6 +805,14 @@ function myController(data) {
     
 };
 
-fetchData()
- 
+fetchData();
 
+/* const timeout = setTimeout(alertmessage, 5000);
+
+function alertmessage() {
+  alert ("Search for activities")
+}
+
+function myStopFunction() {
+  clearTimeout(myTimeout);
+} */

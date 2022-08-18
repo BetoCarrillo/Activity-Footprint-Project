@@ -128,11 +128,10 @@
                                 </div>
                                 <div class="row justify-content-md-center">
                                     <a href="#" role="button" class="btn btn-secondary col-md-10 gy-2"
-                                        data-bs-toggle="popover" title="Emission Factor"
-                                        data-bs-content="Display emissions by ascending or descending order."
-                                        id="modalItem">Order
-                                        Emission
-                                        Factors</a>
+                                        data-bs-toggle="popover" title="Location"
+                                        data-bs-content="Get to know the activities from your location automatically."
+                                        id="modalItem">From you
+                                        location</a>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -150,9 +149,12 @@
                             class="material-symbols-outlined">
                             search
                         </span></button>
-                    <input type="text" class="form-control" placeholder="Search for activities" aria-label="Search"
+                    <input type="text" class="form-control" placeholder="Search footprints" aria-label="Search"
                         id="searchBar">
                 </div>
+            </div>
+            <div class="text-center">
+                <span id="spinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
             </div>
 
         </div>
@@ -161,12 +163,7 @@
             <div class="row" id="noMargin">
                 <!-- SIDEBAR  -->
                 <div class="col-xl-2" id="sideBarPad">
-                    <div class="text-start">
-                        <button id="spinner" class="btn btn-primary col-lg-auto" type="button" disabled>
-                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                            Choose filters..
-                        </button>
-                    </div>
+
                     <div class="text-end">
                         <span class=" btn-primary d-lg-none material-symbols-outlined" id="buttonFilter"
                             data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"
@@ -307,6 +304,15 @@
                                 <div>
                                     <div class="row">
                                         <div class="col-md-3">
+                                            <div>
+                                                <button onclick="getLocation()" id="butGeo" title="geolocation"><span
+                                                        class="material-symbols-outlined" id="butGeol">
+                                                        location_on
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
                                             <button class="invisible" onclick="cleanFunction()" id="butClean"
                                                 title="Clean filters"><span class="material-symbols-outlined"
                                                     id="refreshIcon">
@@ -314,6 +320,8 @@
                                                 </span>
                                             </button>
                                         </div>
+
+
                                         <!-- DISPLAY BUTTON -->
                                         <!--       <div class="col-md-3">
                                                 <button class="invisible" onclick="orderFunction()" id="butOrder"
@@ -349,7 +357,7 @@
                                         SOURCE
                                     </h2>
                                 </div>
-                                <hr class="titlesLine">
+
                             </div>
                         </div>
                     </div>
