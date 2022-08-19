@@ -99,15 +99,25 @@ h2{
 
 /* MODAL */
 
+.modal-title{
+font-size: 16px;
+}
+
+.modal-body {
+    font-size: 20px;
+}
+
 .modal-header{
     background-color: rgb(221, 221, 221);
 }
 
 .modal-footer{background-color: rgb(221, 221, 221) !important;
+    
 
 }
 
 #modalItemCont{background-color: black;
+    font-size: 12px;
 
 }
 #modalItemCont:hover {
@@ -118,6 +128,7 @@ color: black !important;
 #modalItem {
     background-color:white;
     color: black;
+    font-size: 18px !important;
 
 }
 
@@ -271,6 +282,9 @@ height: 2rem !important;
 #doneIcon {
     font-size: 3rem;
 }
+
+.modalIcons{font-size: 3rem !important;}
+
 
 
 #butDone:hover {

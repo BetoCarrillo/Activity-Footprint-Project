@@ -1,9 +1,3 @@
-/* /// To Dos
-.Fetch more pages
-*/
-
-
-
 // ///// FETCH DATA
 
 // let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1&uuid = ${id}`;
@@ -73,25 +67,25 @@ async function getRegLocation(position) {
 }
 /////// FETCH DATA GEOLOCATION
 
-let number = 0
+/* let number = 0
 const array = [44, 2, 443,"ff", "jj", 2]
 for (let i = 0; i < array.length; i++) {
     number++;
     console.log(number);
-}
+} */
 
 const fetchDataGeo = async (countryCode) => {
 const butGeo = document.getElementById("butGeo");
 butGeo.classList.add("invisible");
+let urlsArray = []
+    for (let number = 1; number < 5; number++) {
+        //fetch(`https://beta3.api.climatiq.io/search?results_per_page=100&page=${i}&region=${countryCode}`)
+        url = `https://beta3.api.climatiq.io/search?results_per_page=100&page=${number}&region=${countryCode}`
+        urlsArray.push(url)
+        
+    }
+    //console.log(urlsArray);
 
-let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1&region=${countryCode}`;
-let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2&region=${countryCode}`; 
-let urlThree = `https://beta3.api.climatiq.io/search?results_per_page=100&page=3&region=${countryCode}`; 
-let urlfour = `https://beta3.api.climatiq.io/search?results_per_page=100&page=4&region=${countryCode}`; 
-let urlfive = `https://beta3.api.climatiq.io/search?results_per_page=100&page=5&region=${countryCode}`; 
-let urlsix = `https://beta3.api.climatiq.io/search?results_per_page=100&page=6&region=${countryCode}`; 
-
-    let urls = [urlOne, urlTwo, urlThree, urlfour, urlfive, urlsix];
 var myHeaders = new Headers();
 myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
 
@@ -101,21 +95,21 @@ var requestOptions = {
   redirect: 'follow'
 };
  
-     try {
-         const responses = await Promise.all(urls.map((url) => {
-            
-             const response = fetch(url, requestOptions);
-             
+    try {
+        const responses = await Promise.all(urlsArray.map((url) => {
+            const response = fetch(url, requestOptions);
             return response;
-        })); 
-        const resultOne = await responses[0].json();
-         const resultTwo = await responses[1].json();
-         const resultThree = await responses[2].json();
-         const resultFour = await responses[3].json();
-         const resulFive = await responses[4].json();
-         const resultSix = await responses[5].json();
-        const allData = [...resultOne.results, ...resultTwo.results, ...resultThree.results, ...resultFour.results, ...resulFive.results, ...resultSix.results]
-        myStopFunction()
+        }));
+         
+
+        let allData = []  
+        
+        for (let i = 0; i < 4; i++) {
+        result = await responses[i].json();    
+        allData.push(...result.results);  
+     } 
+         
+      
         createAcc(allData)
         
      } catch (error) {
@@ -127,59 +121,12 @@ var requestOptions = {
 
 ///// FETCH DATA
 const fetchData = async (data) => {
+    let urlsArray = []
+    for (let number = 1; number < 152; number++) {
+        url = `https://beta3.api.climatiq.io/search?results_per_page=100&page=${number}`
+        urlsArray.push(url)
+    }
 
-let urlOne = `https://beta3.api.climatiq.io/search?results_per_page=100&page=1`;
-    let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2`; 
-    let urlThree = `https://beta3.api.climatiq.io/search?results_per_page=100&page=3`; 
-    let urlFour = `https://beta3.api.climatiq.io/search?results_per_page=100&page=4`; 
-    let urlFive = `https://beta3.api.climatiq.io/search?results_per_page=100&page=5`; 
-    let urlSix = `https://beta3.api.climatiq.io/search?results_per_page=100&page=6`; 
-    let urlSeven = `https://beta3.api.climatiq.io/search?results_per_page=100&page=7`; 
-    let urlEight = `https://beta3.api.climatiq.io/search?results_per_page=100&page=8`; 
-    let urlNine = `https://beta3.api.climatiq.io/search?results_per_page=100&page=9`; 
-    let urlTen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=10`; 
-     let urlEleven = `https://beta3.api.climatiq.io/search?results_per_page=100&page=11`; 
-    let urlTwelve = `https://beta3.api.climatiq.io/search?results_per_page=100&page=12`; 
-    let urlThirteen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=13`; 
-    let urlFourteen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=14`; 
-    let urlFifteen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=15`; 
-    let urlSixteen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=16`; 
-    let urlSeventeen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=17`; 
-    let urlEighteen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=18`; 
-    let urlNineteen = `https://beta3.api.climatiq.io/search?results_per_page=100&page=19`; 
-    let urlTwenty = `https://beta3.api.climatiq.io/search?results_per_page=100&page=20`; 
-    let urlTwone = `https://beta3.api.climatiq.io/search?results_per_page=100&page=21`; 
-    let urlTwtwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=22`; 
-    let urlTwthree = `https://beta3.api.climatiq.io/search?results_per_page=100&page=23`; 
-    let urlTwfour = `https://beta3.api.climatiq.io/search?results_per_page=100&page=24`; 
-    let urlTwfive = `https://beta3.api.climatiq.io/search?results_per_page=100&page=25`; 
-    let urlTwsix = `https://beta3.api.climatiq.io/search?results_per_page=100&page=26`; 
-    let urlTwseven = `https://beta3.api.climatiq.io/search?results_per_page=100&page=27`; 
-    let urlTweight = `https://beta3.api.climatiq.io/search?results_per_page=100&page=28`; 
-    let urlTwnine = `https://beta3.api.climatiq.io/search?results_per_page=100&page=29`; 
-    let urlThirty = `https://beta3.api.climatiq.io/search?results_per_page=100&page=30`; 
-    let urlThone = `https://beta3.api.climatiq.io/search?results_per_page=100&page=31`; 
-    let urlThtwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=32`; 
-    let urlThthree = `https://beta3.api.climatiq.io/search?results_per_page=100&page=33`; 
-    let urlThfour = `https://beta3.api.climatiq.io/search?results_per_page=100&page=34`; 
-    let urlThfive = `https://beta3.api.climatiq.io/search?results_per_page=100&page=35`; 
-    let urlThsix = `https://beta3.api.climatiq.io/search?results_per_page=100&page=36`; 
-    let urlThseven = `https://beta3.api.climatiq.io/search?results_per_page=100&page=37`; 
-    let urlTheight = `https://beta3.api.climatiq.io/search?results_per_page=100&page=38`; 
-    let urlThnine = `https://beta3.api.climatiq.io/search?results_per_page=100&page=39`; 
-    let urlForty = `https://beta3.api.climatiq.io/search?results_per_page=100&page=40`; 
-    let urlFoone = `https://beta3.api.climatiq.io/search?results_per_page=100&page=41`; 
-    let urlFotwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=42`; 
-    let urlFothree = `https://beta3.api.climatiq.io/search?results_per_page=100&page=43`; 
-    let urlFofour = `https://beta3.api.climatiq.io/search?results_per_page=100&page=44`; 
-    let urlFofive = `https://beta3.api.climatiq.io/search?results_per_page=100&page=45`; 
-    let urlFosix = `https://beta3.api.climatiq.io/search?results_per_page=100&page=46`; 
-    let urlFoseven = `https://beta3.api.climatiq.io/search?results_per_page=100&page=47`; 
-    let urlFoeight = `https://beta3.api.climatiq.io/search?results_per_page=100&page=48`; 
-    let urlFonine = `https://beta3.api.climatiq.io/search?results_per_page=100&page=49`; 
-    let urlFifty = `https://beta3.api.climatiq.io/search?results_per_page=100&page=50`; 
-    
-let urls = [urlOne,urlTwo, urlThree, urlFour, urlFive, urlSix, urlSeven, urlEight, urlNine, urlTen, urlEleven, urlTwelve, urlThirteen, urlFourteen, urlFifteen, urlSixteen, urlSeventeen, urlEighteen, urlNineteen, urlTwenty, urlTwone, urlTwtwo, urlTwthree, urlTwfour, urlTwfive, urlTwsix, urlTwseven, urlTweight, urlTwnine, urlThirty, urlThone, urlThtwo, urlThthree, urlThfour, urlThfive, urlThsix, urlThseven, urlTheight, urlThnine, urlForty, urlFoone, urlFotwo, urlFothree, urlFofour, urlFofive, urlFosix,urlFoseven, urlFoeight,urlFonine, urlFifty]
 var myHeaders = new Headers();
 myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
 
@@ -190,64 +137,18 @@ var requestOptions = {
 };
   
      try {
-         const responses = await Promise.all(urls.map((url) => {
+         const responses = await Promise.all(urlsArray.map((url) => {
             
              const response = fetch(url, requestOptions);
              
             return response;
-        })); 
-        const resultOne = await responses[0].json();
-         const resultTwo = await responses[1].json();
-         const resultThree = await responses[2].json();
-         const resultFour = await responses[3].json();
-         const resultFive = await responses[4].json();
-         const resultSix = await responses[5].json();
-         const resultSeven = await responses[6].json();
-         const resultEight = await responses[7].json();
-         const resultNine = await responses[8].json();
-          const resultTen = await responses[9].json();
-         const resultEleven = await responses[10].json();
-         const resultTwelve = await responses[11].json();
-         const resultThirteen = await responses[12].json();
-         const resultFourteen = await responses[13].json();
-         const resultFifteen = await responses[14].json();
-         const resultSixteen = await responses[15].json();
-          const resultSeventeen = await responses[16].json();
-         const resultEighteen = await responses[17].json();
-         const resultNineteen = await responses[18].json();
-         const resultTwenty = await responses[19].json();
-         const resultTwone = await responses[20].json();
-         const resultTwtwo = await responses[21].json();
-         const resultTwthree = await responses[22].json();
-          const resultTwfour = await responses[23].json();
-         const resultTwfive = await responses[24].json();
-         const resultTwsix = await responses[25].json();
-         const resultTwseven = await responses[26].json();
-         const resultTweight = await responses[27].json();
-         const resultTwnine = await responses[28].json();
-         const resultThirty = await responses[29].json();
-          const resultThone = await responses[30].json();
-         const resultThtwo = await responses[31].json();
-         const resultThthree = await responses[32].json();
-         const resultThfour = await responses[33].json();
-         const resultThfive = await responses[34].json();
-         const resultThsix = await responses[35].json();
-         const resultThseven = await responses[36].json();
-         const resultTheight = await responses[37].json();
-         const resultThnine = await responses[38].json();
-          const resultForty = await responses[39].json();
-         const resultFoone = await responses[40].json();
-         const resultFotwo = await responses[41].json();
-         const resultFothree = await responses[42].json();
-         const resultFofour = await responses[43].json();
-         const resultFofive = await responses[44].json();
-         const resultFosix = await responses[45].json();
-         const resultFoseven = await responses[46].json();
-         const resultFoeight = await responses[47].json();
-          const resultFonine = await responses[48].json();
-         const resultFifty = await responses[49].json();
-                     
-         const allData = [...resultOne.results, ...resultTwo.results, ...resultThree.results, ...resultFour.results, ...resultFive.results, ...resultSix.results, ...resultSeven.results, ...resultEight.results, ...resultNine.results, ...resultTen.results, ...resultEleven.results, ...resultTwelve.results, ...resultThirteen.results, ...resultFourteen.results, ...resultFifteen.results, ...resultSixteen.results, ...resultSeventeen.results, ...resultEighteen.results, ...resultNineteen.results, ...resultTwenty.results, ...resultTwone.results, ...resultTwtwo.results, ...resultTwthree.results, ...resultTwfour.results, ...resultTwfive.results, ...resultTwsix.results, ...resultTwseven.results, ...resultTweight.results, ...resultTwnine.results, ...resultThirty.results,...resultThone.results, ...resultThtwo.results, ...resultThthree.results, ...resultThfour.results, ...resultThfive.results, ...resultThsix.results, ...resultThseven.results, ...resultTheight.results, ...resultThnine.results, ...resultForty.results, ...resultFoone.results, ...resultFotwo.results, ...resultFothree.results, ...resultFofour.results, ...resultFofive.results, ...resultFosix.results, ...resultFoseven.results, ...resultFoeight.results, ...resultFonine.results, ...resultFifty.results]
+         })); 
+         
+        let allData = []  
+        for (let i = 0; i < 151; i++) {
+        result = await responses[i].json();   
+        allData.push(...result.results);  
+     } 
         
          myController(allData)
         
@@ -281,6 +182,7 @@ var requestOptions = {
              
             return response;
         })); 
+        
         const resultOne = await responses[0].json();
         const resultTwo = await responses[1].json();
          const allData = [...resultOne.results, ...resultTwo.results]
@@ -303,12 +205,27 @@ var requestOptions = {
 } */
 
 
+/* OPEN MODAL  */
+
+const timeout = setTimeout(openModal, 40000); 
+function openModal() {
+    const modal = document.getElementById("buttonLearn").click();
+    console.log("open");
+    
+}
+
+function stopModalFunction() {
+  clearTimeout(timeout);
+ }
+
+
+
 ///// FILTERS Initial Q.
 
 ////////////// ACCORDION
 
 const createAcc = (data) => {
-    
+    stopModalFunction()
     const divAccordion = document.getElementById("accordionFlushExample");
     divAccordion.innerHTML = "";
     document.getElementById("searchBar").value = "";
@@ -765,13 +682,15 @@ const searchEvent = () => {
     });
     
     buttonSearch.addEventListener("click", () => {
-        if (searchBar.value === "") {
+        if (searchBar.value === ""  ) {
     window.alert("Please search for something (or use the filters)")
         } else { fetchDataSearch(query); }
         
     });
 
 }  
+
+
 
 /////// Clean button
 /* const butClean = document.getElementById('butClean');
@@ -807,12 +726,3 @@ function myController(data) {
 
 fetchData();
 
-/* const timeout = setTimeout(alertmessage, 5000);
-
-function alertmessage() {
-  alert ("Search for activities")
-}
-
-function myStopFunction() {
-  clearTimeout(myTimeout);
-} */

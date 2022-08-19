@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
     <div class="positioning">
         <div class="lightBlue">
             <!-- Header -->
@@ -61,14 +62,15 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body container text-start">
-                                <p>This website is developed as part of Project 2 of the Code Academy Berlin. It pulls
+                                <p>This website is developed as part of Project 2 of the Code Academy Berlin program.
+                                    The
+                                    project consists in pulling
                                     live
-                                    data from
-                                    <a href="https://www.climatiq.io/docs" target="_blank" data-bs-toggle="tooltip"
-                                        title="Tooltip">Climatiq
-                                        API</a> displaying global emission factors worldwide.
+                                    data from an online API.
                                 </p>
-                                <p>Climatiq API converts operational activity data into CO2e (carbon
+                                <p><a href="https://www.climatiq.io/docs" target="_blank" data-bs-toggle="tooltip"
+                                        title="Tooltip">Climatiq's
+                                        API</a> converts operational activity data into CO2e (carbon
                                     dioxide equivalent) estimates, allowing to calculate each activity's impact on
                                     the
                                     environment.
@@ -78,12 +80,18 @@
                                     warming
                                     potential (GWP) released into the atmosphere, per some unit related to a particular
                                     activity.</p>
-                                <p> Make use of the search bar and filters to toggle around the different activities
-                                    using
-                                    parameters such as:
-
+                                <p> <strong>Make sure you look for emission factors using any the following
+                                        tools:</strong>
                                     <br>
                                 </p>
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <span class="material-symbols-outlined modalIcons">
+                                            tune
+                                        </span>
+                                        <div>Filter with the following parameters:</div>
+                                    </div>
+                                </div>
                                 <div class="row justify-content-md-center modalDiv">
                                     <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2 "
                                         data-bs-toggle="popover" title="Activity" data-bs-content="Activity's name"
@@ -111,27 +119,42 @@
                                         id="modalItem">Year</a>
                                 </div>
                                 <div class="row justify-content-md-center modalDiv">
-                                    <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
+                                    <a href="#" role="button" class="btn btn-secondary col-md-4 gy-2"
                                         data-bs-toggle="popover" title="Calculation Method"
                                         data-bs-content="Indicates which conversion values were used (IPCC 4th or 5th Assessment Report) to generate the returned CO2e emission factor."
-                                        id="modalItem">Calculation
+                                        id="modalItem">
                                         Method</a>
-                                    <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
+                                    <a href="#" role="button" class="btn btn-secondary col-md-4 gy-2"
                                         data-bs-toggle="popover" title="Unit type"
                                         data-bs-content="The unit in which the factor field is expressed."
                                         id="modalItem">Unit
                                         type</a>
-                                    <a href="#" role="button" class="btn btn-secondary col-md-3 gy-2"
-                                        data-bs-toggle="popover" title="Search Bar"
-                                        data-bs-content="Search for emissions freely using the search bar"
-                                        id="modalItem">Search</a>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-md-12 gy-3">
+                                        <span class="material-symbols-outlined modalIcons">
+                                            search
+                                        </span>
+                                    </div>
                                 </div>
                                 <div class="row justify-content-md-center">
-                                    <a href="#" role="button" class="btn btn-secondary col-md-10 gy-2"
+                                    <a href="#" role="button" class="btn btn-secondary col-md-9 gy-2"
+                                        data-bs-toggle="popover" title="Search Bar"
+                                        data-bs-content="Search for emissions freely using the search bar"
+                                        id="modalItem">Search Bar</a>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-md-12 gy-3 ">
+                                        <span class="material-symbols-outlined modalIcons">
+                                            location_on
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-md-center">
+                                    <a href="#" role="button" class="btn btn-secondary col-md-9 gy-2"
                                         data-bs-toggle="popover" title="Location"
                                         data-bs-content="Get to know the activities from your location automatically."
-                                        id="modalItem">From you
-                                        location</a>
+                                        id="modalItem">Activities from your location</a>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -374,7 +397,7 @@
         </div>
 
         <div class="footerInfo">
-            <div><strong>Code Academy Berlin 2022</strong> </div>
+            <div><strong style="font-size:12px ;">Code Academy Berlin 2022</strong> </div>
             <div><strong>Alberto Carrillo</strong> </div>
         </div>
         <!--       <div>
