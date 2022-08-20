@@ -75,8 +75,6 @@ for (let i = 0; i < array.length; i++) {
 } */
 
 const fetchDataGeo = async (countryCode) => {
-const butGeo = document.getElementById("butGeo");
-butGeo.classList.add("invisible");
 let urlsArray = []
     for (let number = 1; number < 5; number++) {
         //fetch(`https://beta3.api.climatiq.io/search?results_per_page=100&page=${i}&region=${countryCode}`)
@@ -207,12 +205,12 @@ var requestOptions = {
 
 /* OPEN MODAL  */
 
-const timeout = setTimeout(openModal, 40000); 
-function openModal() {
+const timeout = setTimeout(getLocation, 5000); 
+/* function openModal() {
     const modal = document.getElementById("buttonLearn").click();
     console.log("open");
     
-}
+} */
 
 function stopModalFunction() {
   clearTimeout(timeout);
