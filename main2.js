@@ -205,7 +205,7 @@ var requestOptions = {
 
 /* OPEN MODAL  */
 
-const timeout = setTimeout(getLocation, 5000); 
+const timeout = setTimeout(getLocation, 3000); 
 /* function openModal() {
     const modal = document.getElementById("buttonLearn").click();
     console.log("open");

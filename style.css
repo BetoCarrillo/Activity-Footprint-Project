@@ -3,7 +3,6 @@
 
 .lightBlue {
     background-color: rgb(221, 221, 221);
-    height: 100vh;
 }
 
 #align {
@@ -44,6 +43,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+  
 }
 
 
