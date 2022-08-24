@@ -85,7 +85,7 @@ let urlsArray = []
     //console.log(urlsArray);
 
 var myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
+myHeaders.append("Authorization", API_KEY);
 
 var requestOptions = {
   method: 'GET',
