@@ -126,7 +126,7 @@ const fetchData = async (data) => {
     }
 
 var myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
+myHeaders.append("Authorization", API_KEY);
 
 var requestOptions = {
   method: 'GET',
@@ -165,7 +165,7 @@ let urlTwo = `https://beta3.api.climatiq.io/search?results_per_page=100&page=2&q
 
 let urls = [urlOne,urlTwo]
 var myHeaders = new Headers();
-myHeaders.append("Authorization", "Bearer EKJJG1Y80WM90VK4107XJR1JWYDE");
+myHeaders.append("Authorization", API_KEY);
 
 var requestOptions = {
   method: 'GET',
